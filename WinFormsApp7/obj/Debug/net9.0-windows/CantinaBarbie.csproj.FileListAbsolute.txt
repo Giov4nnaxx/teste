@@ -1,0 +1,7 @@
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\WinFormsApp7.Form1.resources
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\CantinaBarbie.Properties.Resources.resources
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\CantinaBarbie.csproj.GenerateResource.cache
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\CantinaBarbie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\CantinaBarbie.AssemblyInfoInputs.cache
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\CantinaBarbie.AssemblyInfo.cs
+C:\Users\25162850\source\repos\WinFormsApp7\WinFormsApp7\obj\Debug\net9.0-windows\CantinaBarbie.csproj.CoreCompileInputs.cache
