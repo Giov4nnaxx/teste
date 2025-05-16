@@ -93,6 +93,36 @@ namespace WinFormsApp7.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bolt_logo {
+            get {
+                object obj = ResourceManager.GetObject("bolt logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_05_15_081445_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Captura_de_tela_2025-05-15_081445-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_05_15_082457_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Captura_de_tela_2025-05-15_082457-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("download-removebg-preview", resourceCulture);

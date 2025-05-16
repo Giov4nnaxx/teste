@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace WinFormsApp7
 {
     public partial class Form1 : Form
@@ -21,14 +23,16 @@ namespace WinFormsApp7
 
         private void AdicionarProduto()
         {
-            produtos.Add(new Produtos("Glitter", 10.00m));
-            produtos.Add(new Produtos("CupCake", 20.00m));
-            produtos.Add(new Produtos("Pirulito", 30.00m));
-            produtos.Add(new Produtos("Bolo", 40.00m));
-            produtos.Add(new Produtos("Biscoito", 50.00m));
-            produtos.Add(new Produtos("Chocolate", 60.00m));
-            produtos.Add(new Produtos("Bala", 70.00m));
-
+            produtos.Add(new Produtos("Pão de Queijo", 3.50m));
+            produtos.Add(new Produtos("Coxinha", 5.00m));
+            produtos.Add(new Produtos("Pastel de Carne", 6.00m));
+            produtos.Add(new Produtos("Pastel de Queijo", 5.50m));
+            produtos.Add(new Produtos("Suco Natural (300ml)", 4.00m));
+            produtos.Add(new Produtos("Refrigerante Lata", 4.50m));
+            produtos.Add(new Produtos("Hambúrguer Simples", 8.00m));
+            produtos.Add(new Produtos("Hambúrguer com Queijo", 9.00m));
+            produtos.Add(new Produtos("X-Tudo", 12.00m));
+            produtos.Add(new Produtos("Água Mineral", 2.50m));
         }
 
 
@@ -51,22 +55,39 @@ namespace WinFormsApp7
         }
         private void lblProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lblProdutos.SelectedItem != null)
+            {
+                numericQuant.Value = 1;
+            }
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (lblProdutos.SelectedItem == null)
+            if (lblProdutos.SelectedItem != null && numericQuant.Value > 0)
+            {
+                int quant = (int)numericQuant.Value;
+
+                Produtos produtoSelecionado = (Produtos)lblProdutos.SelectedItem;
+                Produtos vendaFeita = new Produtos(produtoSelecionado.Nome, produtoSelecionado.Preco, quant);
+                carrinhos.Add(vendaFeita); 
+                totalCarrinho += produtoSelecionado.Preco * quant;
+                total.Text = $" TOTAL: R$ {total:F2}";
+                lblProdutos.SelectedIndex = -1;
+                numericQuant.Value = 0;
+
+                ListarCarrinho();
+                TotalPagar();
+            }
+            else if (numericQuant.Value <= 0)
+            {
+                MessageBox.Show("Indique uma quantidade válida!");
+                numericQuant.Value = 1;
+            }
+            else
             {
                 MessageBox.Show("Selecione um produto");
                 return;
             }
-            var produto = (Produtos)lblProdutos.SelectedItem;
-            carrinhos.Add(produto);
-            totalCarrinho += produto.Preco;
-
-            ListarCarrinho();
-            TotalPagar();
         }
 
         private void TotalPagar()
@@ -115,6 +136,26 @@ namespace WinFormsApp7
         }
 
         private void total_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCarrinho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
