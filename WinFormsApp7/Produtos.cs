@@ -1,39 +1,22 @@
 ﻿namespace WinFormsApp7
 {
-    internal class Produtos
+
+    public class Produtos
     {
-        private string descricao;
-        private decimal preco;
-        private int quantidade = 0;
-        public string Descricao
+        public string Descricao { get; set; }
+        public decimal Preco { get; set; }
+        public int Quantidade { get; set; }
+
+        public Produtos(string descricao, decimal preco, int quantidade = 1)
         {
-            get { return descricao; }
-        }
-        public double Preco
-        {
-            get { return preco; }
+            Descricao = descricao;
+            Preco = preco;
+            Quantidade = quantidade;
         }
 
-        public int Quantidade
-        {
-            set { quantidade = value; }
-            get { return quantidade; }
-        }
-        public object listBox2 { get; internal set; }
-
-        public Produtos(string descricao,decimal preco)
-        {
-
-            this.descricao = descricao;
-            this.preco = preco;
-            this.quantidade = 0;
-
-        }
         public override string ToString()
         {
-            if (quantidade > 0)
-                return $" {quantidade}x {descricao} - R$ {preco:F2}";
-            else return $"  {descricao} - R$ {preco:F2}";
+            return $"x{Quantidade} {Descricao} - R$ {(Preco * Quantidade):F2}";
         }
     }
 }

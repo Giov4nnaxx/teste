@@ -1,5 +1,3 @@
-using System.Windows.Forms;
-
 namespace WinFormsApp7
 {
     public partial class Form1 : Form
@@ -66,17 +64,27 @@ namespace WinFormsApp7
             if (lblProdutos.SelectedItem != null && numericQuant.Value > 0)
             {
                 int quant = (int)numericQuant.Value;
-
                 Produtos produtoSelecionado = (Produtos)lblProdutos.SelectedItem;
-                Produtos vendaFeita = new Produtos(produtoSelecionado.Nome, produtoSelecionado.Preco, quant);
-                carrinhos.Add(vendaFeita); 
+
+                var itemExistente = carrinhos.FirstOrDefault(p => p.Descricao == produtoSelecionado.Descricao);
+
+                if (itemExistente != null)
+                {
+                    itemExistente.Quantidade += quant;
+                }
+                else
+                {
+                    Produtos novoProduto = new Produtos(produtoSelecionado.Descricao, produtoSelecionado.Preco, quant);
+                    carrinhos.Add(novoProduto);
+                }
+
                 totalCarrinho += produtoSelecionado.Preco * quant;
-                total.Text = $" TOTAL: R$ {total:F2}";
-                lblProdutos.SelectedIndex = -1;
-                numericQuant.Value = 0;
 
                 ListarCarrinho();
                 TotalPagar();
+
+                lblProdutos.SelectedIndex = -1;
+                numericQuant.Value = 1;
             }
             else if (numericQuant.Value <= 0)
             {
@@ -86,7 +94,6 @@ namespace WinFormsApp7
             else
             {
                 MessageBox.Show("Selecione um produto");
-                return;
             }
         }
 
@@ -103,8 +110,15 @@ namespace WinFormsApp7
                 return;
             }
             var produto = (Produtos)lblCarrinho.SelectedItem;
-            carrinhos.Remove(produto);
+
+            produto.Quantidade--;
+
             totalCarrinho -= produto.Preco;
+
+            if (produto.Quantidade <= 0)
+            {
+                carrinhos.Remove(produto);
+            }
             ListarCarrinho();
             TotalPagar();
 
@@ -158,6 +172,38 @@ namespace WinFormsApp7
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listNomes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "Cartão")
+            {
+                MessageBox.Show("Pagamento em Cartão");
+
+            }
+            if (comboBox1.SelectedItem == "Pix")
+            {
+                MessageBox.Show("Pagamento no Pix");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                listNomes.Items.Add(txtNome.Text);
+                txtNome.Clear();
+            }
         }
     }
 }
