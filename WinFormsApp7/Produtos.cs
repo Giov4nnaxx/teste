@@ -12,6 +12,7 @@
             Descricao = descricao;
             Preco = preco;
             Quantidade = quantidade;
+
         }
 
         public override string ToString()

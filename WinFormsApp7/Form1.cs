@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace WinFormsApp7
 {
     public partial class Form1 : Form
@@ -111,14 +113,12 @@ namespace WinFormsApp7
             }
             var produto = (Produtos)lblCarrinho.SelectedItem;
 
-            produto.Quantidade--;
 
-            totalCarrinho -= produto.Preco;
+            totalCarrinho -= produto.Preco * produto.Quantidade;
+            produto.Quantidade = 0;
+            carrinhos.Remove(produto);
 
-            if (produto.Quantidade <= 0)
-            {
-                carrinhos.Remove(produto);
-            }
+
             ListarCarrinho();
             TotalPagar();
 
@@ -141,6 +141,7 @@ namespace WinFormsApp7
                 totalCarrinho = 0;
                 ListarCarrinho();
                 TotalPagar();
+                listNomes.Items.Clear();
             }
         }
 
@@ -191,10 +192,15 @@ namespace WinFormsApp7
                 MessageBox.Show("Pagamento em Cartão");
 
             }
-            if (comboBox1.SelectedItem == "Pix")
+            else if (comboBox1.SelectedItem == "Pix")
             {
                 MessageBox.Show("Pagamento no Pix");
             }
+            else if (comboBox1.SelectedItem == "Dinheiro")
+            {
+                var dinheiro = Interaction.InputBox($"O total é {totalCarrinho} Digite o valor ");
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
