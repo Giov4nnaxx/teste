@@ -103,6 +103,16 @@ namespace WinFormsApp7.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bolt_logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("bolt logo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_tela_2025_05_15_081445_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Captura_de_tela_2025-05-15_081445-removebg-preview", resourceCulture);

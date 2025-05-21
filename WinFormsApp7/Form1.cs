@@ -101,7 +101,43 @@ namespace WinFormsApp7
 
         private void TotalPagar()
         {
+            
             total.Text = $"Total a pagar:R$ {totalCarrinho:F2}";
+
+        }
+
+        private void Pagamento()
+        {
+            if (comboBox1.SelectedItem == "Cartão")
+            {
+                MessageBox.Show("Pagamento em Cartão");
+
+            }
+            else if (comboBox1.SelectedItem == "Pix")
+            {
+                MessageBox.Show("Pagamento no Pix");
+            }
+            else if (comboBox1.SelectedItem == "Dinheiro")
+            {
+                string input = Interaction.InputBox($"O total é R$ {totalCarrinho:F2}. Digite o valor:");
+                if (decimal.TryParse(input, out decimal dinheiro))
+                {
+                    decimal troco = dinheiro - totalCarrinho;
+                    if (dinheiro < totalCarrinho)
+                    {
+                        MessageBox.Show($"Está faltando {troco:F2}");
+                        Pagamento();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Troco: R$ {troco:F2}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Valor inválido. Tente novamente.");
+                }
+            }
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -113,14 +149,33 @@ namespace WinFormsApp7
             }
             var produto = (Produtos)lblCarrinho.SelectedItem;
 
+            int quantidadeRemover = (int)numericQuant.Value;
 
-            totalCarrinho -= produto.Preco * produto.Quantidade;
-            produto.Quantidade = 0;
-            carrinhos.Remove(produto);
+            if (quantidadeRemover < 0)
+            {
+                MessageBox.Show("Indique uma quantidade válida!");
+                return;
+            }
 
+            else if (quantidadeRemover >= produto.Quantidade)
+            {
+                totalCarrinho -= produto.Preco * produto.Quantidade;
+                carrinhos.Remove(produto);
+            }
+
+            else if (quantidadeRemover < numericQuant.Value)
+            {
+               
+            }
+            else
+            {
+                produto.Quantidade -= quantidadeRemover;
+                totalCarrinho -= produto.Preco * quantidadeRemover;
+            }
 
             ListarCarrinho();
             TotalPagar();
+            numericQuant.Value = 1;
 
         }
 
@@ -129,6 +184,16 @@ namespace WinFormsApp7
             if (carrinhos.Count == 0)
             {
                 MessageBox.Show("Carrinho vazio");
+                return;
+            }
+            else if (listNomes.Items.Count == 0)
+            {
+                MessageBox.Show("Sem Cliente Cadastrado");
+                return;
+            }
+            else if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione uma forma de pagamento");
                 return;
             }
 
@@ -177,6 +242,10 @@ namespace WinFormsApp7
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (listNomes.SelectedIndex >=0)
+            {
+                MessageBox.Show("Um cliente por vez");
+            }
 
         }
 
@@ -187,22 +256,8 @@ namespace WinFormsApp7
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == "Cartão")
-            {
-                MessageBox.Show("Pagamento em Cartão");
-
-            }
-            else if (comboBox1.SelectedItem == "Pix")
-            {
-                MessageBox.Show("Pagamento no Pix");
-            }
-            else if (comboBox1.SelectedItem == "Dinheiro")
-            {
-                var dinheiro = Interaction.InputBox($"O total é {totalCarrinho} Digite o valor ");
-            }
-
+            Pagamento();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtNome.Text))
@@ -210,6 +265,7 @@ namespace WinFormsApp7
                 listNomes.Items.Add(txtNome.Text);
                 txtNome.Clear();
             }
+            
         }
     }
 }

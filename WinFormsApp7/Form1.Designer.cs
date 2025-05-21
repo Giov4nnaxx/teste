@@ -35,7 +35,6 @@
             btnFinalizar = new Button();
             total = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             numericQuant = new NumericUpDown();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -45,19 +44,20 @@
             btnNomes = new Button();
             comboBox1 = new ComboBox();
             label3 = new Label();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnAdicionar
             // 
-            btnAdicionar.BackColor = Color.FromArgb(230, 255, 0);
+            btnAdicionar.BackColor = Color.FromArgb(202, 196, 183);
             btnAdicionar.Font = new Font("Perpetua", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdicionar.ForeColor = Color.Black;
-            btnAdicionar.Location = new Point(744, 152);
+            btnAdicionar.Location = new Point(865, 184);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(75, 23);
+            btnAdicionar.Size = new Size(83, 29);
             btnAdicionar.TabIndex = 0;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = false;
@@ -65,12 +65,12 @@
             // 
             // btnRemover
             // 
-            btnRemover.BackColor = Color.FromArgb(230, 255, 0);
+            btnRemover.BackColor = Color.FromArgb(202, 196, 183);
             btnRemover.Font = new Font("Perpetua", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRemover.ForeColor = Color.Black;
-            btnRemover.Location = new Point(744, 215);
+            btnRemover.Location = new Point(865, 246);
             btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(75, 23);
+            btnRemover.Size = new Size(83, 32);
             btnRemover.TabIndex = 1;
             btnRemover.Text = "Remover";
             btnRemover.UseVisualStyleBackColor = false;
@@ -78,34 +78,34 @@
             // 
             // lblProdutos
             // 
-            lblProdutos.BackColor = Color.FromArgb(17, 25, 12);
+            lblProdutos.BackColor = Color.FromArgb(243, 241, 238);
             lblProdutos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProdutos.ForeColor = Color.FromArgb(243, 241, 238);
+            lblProdutos.ForeColor = Color.FromArgb(17, 25, 12);
             lblProdutos.FormattingEnabled = true;
-            lblProdutos.Location = new Point(456, 134);
+            lblProdutos.Location = new Point(465, 152);
             lblProdutos.Name = "lblProdutos";
-            lblProdutos.Size = new Size(249, 104);
+            lblProdutos.Size = new Size(300, 384);
             lblProdutos.TabIndex = 2;
             lblProdutos.SelectedIndexChanged += lblProdutos_SelectedIndexChanged;
             // 
             // lblCarrinho
             // 
-            lblCarrinho.BackColor = Color.FromArgb(17, 25, 12);
+            lblCarrinho.BackColor = Color.FromArgb(243, 241, 238);
             lblCarrinho.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCarrinho.ForeColor = Color.FromArgb(243, 241, 238);
+            lblCarrinho.ForeColor = Color.FromArgb(17, 25, 12);
             lblCarrinho.FormattingEnabled = true;
-            lblCarrinho.Location = new Point(858, 134);
+            lblCarrinho.Location = new Point(1046, 152);
             lblCarrinho.Name = "lblCarrinho";
-            lblCarrinho.Size = new Size(253, 104);
+            lblCarrinho.Size = new Size(296, 384);
             lblCarrinho.TabIndex = 3;
             lblCarrinho.SelectedIndexChanged += lblCarrinho_SelectedIndexChanged;
             // 
             // btnFinalizar
             // 
-            btnFinalizar.BackColor = Color.FromArgb(230, 255, 0);
+            btnFinalizar.BackColor = Color.FromArgb(202, 196, 183);
             btnFinalizar.Font = new Font("Perpetua", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFinalizar.ForeColor = Color.Black;
-            btnFinalizar.Location = new Point(685, 313);
+            btnFinalizar.Location = new Point(804, 317);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(201, 54);
             btnFinalizar.TabIndex = 4;
@@ -118,8 +118,8 @@
             total.AutoSize = true;
             total.BackColor = Color.Transparent;
             total.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            total.ForeColor = Color.FromArgb(243, 241, 238);
-            total.Location = new Point(877, 241);
+            total.ForeColor = Color.FromArgb(17, 25, 12);
+            total.Location = new Point(1058, 55);
             total.Name = "total";
             total.Size = new Size(234, 32);
             total.TabIndex = 6;
@@ -129,28 +129,17 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_tela_2025_05_15_081445_removebg_preview;
-            pictureBox1.Location = new Point(-8, -5);
+            pictureBox1.Location = new Point(-3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(670, 372);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.Size = new Size(902, 481);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.Captura_de_tela_2025_05_15_082457_removebg_preview;
-            pictureBox2.Location = new Point(456, 1);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(249, 127);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
             // numericQuant
             // 
-            numericQuant.Location = new Point(456, 316);
+            numericQuant.Location = new Point(315, 292);
             numericQuant.Name = "numericQuant";
             numericQuant.Size = new Size(120, 23);
             numericQuant.TabIndex = 9;
@@ -159,10 +148,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
+            label1.BackColor = Color.FromArgb(230, 255, 0);
+            label1.FlatStyle = FlatStyle.Popup;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(243, 241, 238);
-            label1.Location = new Point(456, 279);
+            label1.ForeColor = Color.FromArgb(17, 25, 12);
+            label1.Location = new Point(315, 258);
             label1.Name = "label1";
             label1.Size = new Size(87, 20);
             label1.TabIndex = 10;
@@ -179,40 +169,42 @@
             // txtNome
             // 
             txtNome.BackColor = Color.FromArgb(243, 241, 238);
-            txtNome.Location = new Point(26, 150);
+            txtNome.Location = new Point(12, 108);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(314, 23);
+            txtNome.Size = new Size(266, 23);
             txtNome.TabIndex = 12;
             txtNome.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11F);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(26, 118);
+            label2.BackColor = Color.FromArgb(230, 255, 0);
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.ForeColor = Color.FromArgb(17, 25, 12);
+            label2.Location = new Point(12, 66);
             label2.Name = "label2";
-            label2.Size = new Size(169, 20);
+            label2.Size = new Size(176, 21);
             label2.TabIndex = 13;
             label2.Text = "Insira o nome do cliente";
             // 
             // listNomes
             // 
-            listNomes.BackColor = Color.FromArgb(17, 25, 12);
-            listNomes.ForeColor = Color.White;
+            listNomes.BackColor = Color.FromArgb(243, 241, 238);
+            listNomes.ForeColor = Color.FromArgb(17, 25, 12);
             listNomes.FormattingEnabled = true;
-            listNomes.Location = new Point(26, 199);
+            listNomes.Location = new Point(12, 152);
             listNomes.Name = "listNomes";
-            listNomes.Size = new Size(266, 79);
+            listNomes.Size = new Size(266, 109);
             listNomes.TabIndex = 14;
             listNomes.SelectedIndexChanged += listNomes_SelectedIndexChanged;
             // 
             // btnNomes
             // 
-            btnNomes.BackColor = Color.FromArgb(230, 255, 0);
-            btnNomes.Location = new Point(360, 150);
+            btnNomes.BackColor = Color.FromArgb(202, 196, 183);
+            btnNomes.ForeColor = Color.FromArgb(17, 25, 12);
+            btnNomes.Location = new Point(299, 103);
             btnNomes.Name = "btnNomes";
-            btnNomes.Size = new Size(74, 24);
+            btnNomes.Size = new Size(91, 30);
             btnNomes.TabIndex = 15;
             btnNomes.Text = "Adicionar";
             btnNomes.UseVisualStyleBackColor = false;
@@ -222,28 +214,38 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Pix", "Cartão", "Dinheiro" });
-            comboBox1.Location = new Point(959, 316);
+            comboBox1.Location = new Point(840, 450);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(108, 23);
             comboBox1.TabIndex = 16;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.ForeColor = Color.WhiteSmoke;
-            label3.Location = new Point(959, 284);
+            label3.ForeColor = Color.FromArgb(17, 25, 12);
+            label3.Location = new Point(840, 411);
             label3.Name = "label3";
             label3.Size = new Size(121, 15);
             label3.TabIndex = 17;
             label3.Text = "Forma de Pagamento";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.bolt_logo__1_;
+            pictureBox2.Location = new Point(604, -21);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 199);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 18;
+            pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(1143, 584);
+            BackColor = Color.FromArgb(243, 241, 238);
+            ClientSize = new Size(1388, 641);
             Controls.Add(label3);
             Controls.Add(comboBox1);
             Controls.Add(btnNomes);
@@ -265,8 +267,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cantina";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,7 +282,6 @@
         private Button btnFinalizar;
         private Label total;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private NumericUpDown numericQuant;
         private Label label1;
         private DateTimePicker dateTimePicker1;
@@ -290,5 +291,6 @@
         private Button btnNomes;
         private ComboBox comboBox1;
         private Label label3;
+        private PictureBox pictureBox2;
     }
 }
