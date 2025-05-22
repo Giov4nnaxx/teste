@@ -98,14 +98,29 @@ namespace WinFormsApp7
                 MessageBox.Show("Selecione um produto");
             }
         }
-
-        private void TotalPagar()
+        private void Extrato()
         {
+            string nomeDoCliente = listNomes.SelectedItem?.ToString() ?? "(sem cliente)";
+            string formaDePagamento = comboBox1.SelectedItem?.ToString() ?? "(sem pagamento)";
+            if (carrinhos.Count == 0)
+            {
+                MessageBox.Show("Carrinho vazio.", "Extrato da Compra");
+                return;
+            }
             
-            total.Text = $"Total a pagar:R$ {totalCarrinho:F2}";
 
+            string extrato = $"Nome do Cliente: {nomeDoCliente}\nForma de Pagamento: {formaDePagamento}\nProdutos:\n";
+            foreach (var produto in carrinhos)
+            {
+                extrato += $"x {produto.Quantidade} {produto.Descricao} - R$ {produto.Preco:F2} \n";
+                if (checkBox1.Checked)
+                {
+                    extrato = $"Para Viagem \n Nome do Cliente: {nomeDoCliente}\nForma de Pagamento: {formaDePagamento}\nProdutos:\n ";
+                }
+            }
+            extrato += $"Total: R$ {totalCarrinho:F2}";
+            MessageBox.Show(extrato, "Extrato da Compra");
         }
-
         private void Pagamento()
         {
             if (comboBox1.SelectedItem == "Cartão")
@@ -140,6 +155,11 @@ namespace WinFormsApp7
             }
         }
 
+        private void TotalPagar()
+        {
+            total.Text = $"Total: R$ {totalCarrinho:F2}";
+        }
+
         private void btnRemover_Click(object sender, EventArgs e)
         {
             if (lblCarrinho.SelectedItem == null)
@@ -165,7 +185,7 @@ namespace WinFormsApp7
 
             else if (quantidadeRemover < numericQuant.Value)
             {
-               
+
             }
             else
             {
@@ -175,6 +195,7 @@ namespace WinFormsApp7
 
             ListarCarrinho();
             TotalPagar();
+            Extrato();
             numericQuant.Value = 1;
 
         }
@@ -201,7 +222,7 @@ namespace WinFormsApp7
 
             if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show("Compra finalizada com sucesso");
+                Extrato();
                 carrinhos.Clear();
                 totalCarrinho = 0;
                 ListarCarrinho();
@@ -242,10 +263,7 @@ namespace WinFormsApp7
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (listNomes.SelectedIndex >=0)
-            {
-                MessageBox.Show("Um cliente por vez");
-            }
+
 
         }
 
@@ -263,8 +281,15 @@ namespace WinFormsApp7
             if (!string.IsNullOrWhiteSpace(txtNome.Text))
             {
                 listNomes.Items.Add(txtNome.Text);
+                listNomes.SelectedIndex = listNomes.Items.Count - 1;
                 txtNome.Clear();
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+
             
         }
     }

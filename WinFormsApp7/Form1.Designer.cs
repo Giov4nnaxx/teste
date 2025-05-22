@@ -45,6 +45,7 @@
             comboBox1 = new ComboBox();
             label3 = new Label();
             pictureBox2 = new PictureBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -52,7 +53,7 @@
             // 
             // btnAdicionar
             // 
-            btnAdicionar.BackColor = Color.FromArgb(202, 196, 183);
+            btnAdicionar.BackColor = Color.FromArgb(230, 255, 0);
             btnAdicionar.Font = new Font("Perpetua", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdicionar.ForeColor = Color.Black;
             btnAdicionar.Location = new Point(865, 184);
@@ -65,7 +66,7 @@
             // 
             // btnRemover
             // 
-            btnRemover.BackColor = Color.FromArgb(202, 196, 183);
+            btnRemover.BackColor = Color.FromArgb(230, 255, 0);
             btnRemover.Font = new Font("Perpetua", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRemover.ForeColor = Color.Black;
             btnRemover.Location = new Point(865, 246);
@@ -78,7 +79,7 @@
             // 
             // lblProdutos
             // 
-            lblProdutos.BackColor = Color.FromArgb(243, 241, 238);
+            lblProdutos.BackColor = Color.FromArgb(202, 196, 183);
             lblProdutos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProdutos.ForeColor = Color.FromArgb(17, 25, 12);
             lblProdutos.FormattingEnabled = true;
@@ -90,7 +91,7 @@
             // 
             // lblCarrinho
             // 
-            lblCarrinho.BackColor = Color.FromArgb(243, 241, 238);
+            lblCarrinho.BackColor = Color.FromArgb(202, 196, 183);
             lblCarrinho.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCarrinho.ForeColor = Color.FromArgb(17, 25, 12);
             lblCarrinho.FormattingEnabled = true;
@@ -102,8 +103,8 @@
             // 
             // btnFinalizar
             // 
-            btnFinalizar.BackColor = Color.FromArgb(202, 196, 183);
-            btnFinalizar.Font = new Font("Perpetua", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnFinalizar.BackColor = Color.FromArgb(230, 255, 0);
+            btnFinalizar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnFinalizar.ForeColor = Color.Black;
             btnFinalizar.Location = new Point(804, 317);
             btnFinalizar.Name = "btnFinalizar";
@@ -129,7 +130,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_tela_2025_05_15_081445_removebg_preview;
-            pictureBox1.Location = new Point(-3, 2);
+            pictureBox1.Location = new Point(-3, -5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(902, 481);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -189,7 +190,7 @@
             // 
             // listNomes
             // 
-            listNomes.BackColor = Color.FromArgb(243, 241, 238);
+            listNomes.BackColor = Color.FromArgb(202, 196, 183);
             listNomes.ForeColor = Color.FromArgb(17, 25, 12);
             listNomes.FormattingEnabled = true;
             listNomes.Location = new Point(12, 152);
@@ -200,7 +201,8 @@
             // 
             // btnNomes
             // 
-            btnNomes.BackColor = Color.FromArgb(202, 196, 183);
+            btnNomes.BackColor = Color.FromArgb(230, 255, 0);
+            btnNomes.BackgroundImageLayout = ImageLayout.None;
             btnNomes.ForeColor = Color.FromArgb(17, 25, 12);
             btnNomes.Location = new Point(299, 103);
             btnNomes.Name = "btnNomes";
@@ -214,7 +216,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Pix", "Cartão", "Dinheiro" });
-            comboBox1.Location = new Point(840, 450);
+            comboBox1.Location = new Point(849, 443);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(108, 23);
             comboBox1.TabIndex = 16;
@@ -224,7 +226,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(17, 25, 12);
-            label3.Location = new Point(840, 411);
+            label3.Location = new Point(849, 408);
             label3.Name = "label3";
             label3.Size = new Size(121, 15);
             label3.TabIndex = 17;
@@ -233,12 +235,23 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.bolt_logo__1_;
-            pictureBox2.Location = new Point(604, -21);
+            pictureBox2.Location = new Point(573, -22);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(261, 199);
+            pictureBox2.Size = new Size(259, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 18;
             pictureBox2.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(865, 495);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(66, 19);
+            checkBox1.TabIndex = 19;
+            checkBox1.Text = "Viagem";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // Form1
             // 
@@ -246,6 +259,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1388, 641);
+            Controls.Add(checkBox1);
             Controls.Add(label3);
             Controls.Add(comboBox1);
             Controls.Add(btnNomes);
@@ -292,5 +306,6 @@
         private ComboBox comboBox1;
         private Label label3;
         private PictureBox pictureBox2;
+        private CheckBox checkBox1;
     }
 }
