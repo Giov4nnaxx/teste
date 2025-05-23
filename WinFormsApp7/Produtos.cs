@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return $"x{Quantidade} {Descricao} - R$ {(Preco * Quantidade):F2}";
+            return $" {Descricao} - R$ {(Preco * Quantidade):F2}";
         }
     }
 }

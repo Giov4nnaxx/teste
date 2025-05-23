@@ -50,7 +50,7 @@ namespace WinFormsApp7
             lblCarrinho.Items.Clear();
             foreach (var carrinho in carrinhos)
             {
-                lblCarrinho.Items.Add(carrinho);
+                lblCarrinho.Items.Add($"x{carrinho.Quantidade} {carrinho.Descricao} - R$ {carrinho.Preco * carrinho.Quantidade:F2}");
             }
         }
         private void lblProdutos_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,25 +100,31 @@ namespace WinFormsApp7
         }
         private void Extrato()
         {
-            string nomeDoCliente = listNomes.SelectedItem?.ToString() ?? "(sem cliente)";
-            string formaDePagamento = comboBox1.SelectedItem?.ToString() ?? "(sem pagamento)";
+            string nomeDoCliente = listNomes.SelectedItem?.ToString() ?? "(Sem cliente)";
+            string formaDePagamento = comboBox1.SelectedItem?.ToString() ?? "(Sem pagamento)";
+            string dataAtual = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
             if (carrinhos.Count == 0)
             {
                 MessageBox.Show("Carrinho vazio.", "Extrato da Compra");
                 return;
             }
-            
 
-            string extrato = $"Nome do Cliente: {nomeDoCliente}\nForma de Pagamento: {formaDePagamento}\nProdutos:\n";
+
+            string extrato = $"Nome do Cliente: {nomeDoCliente}\n\nForma de Pagamento: {formaDePagamento}\n\nProdutos:\n";
             foreach (var produto in carrinhos)
             {
                 extrato += $"x {produto.Quantidade} {produto.Descricao} - R$ {produto.Preco:F2} \n";
                 if (checkBox1.Checked)
                 {
-                    extrato = $"Para Viagem \n Nome do Cliente: {nomeDoCliente}\nForma de Pagamento: {formaDePagamento}\nProdutos:\n ";
+                    extrato = $"Para Viagem \n\nNome do Cliente: {nomeDoCliente}\n\nForma de Pagamento: {formaDePagamento}\n\nProdutos:\n ";
+                    foreach (var produtoViagem in carrinhos)
+                    {
+                        extrato += $"x {produto.Quantidade} {produto.Descricao} - R$ {produto.Preco:F2} \n";
+                    }
                 }
             }
-            extrato += $"Total: R$ {totalCarrinho:F2}";
+            extrato += $"Total: R$ {totalCarrinho:F2}\n\n{dataAtual}";
             MessageBox.Show(extrato, "Extrato da Compra");
         }
         private void Pagamento()
@@ -151,6 +157,7 @@ namespace WinFormsApp7
                 else
                 {
                     MessageBox.Show("Valor inválido. Tente novamente.");
+                    Pagamento();
                 }
             }
         }
@@ -288,9 +295,32 @@ namespace WinFormsApp7
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
 
-            
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnAdicionar.FlatStyle = FlatStyle.Flat;
+            btnAdicionar.FlatAppearance.BorderSize = 1;
+            btnRemover.FlatStyle = FlatStyle.Flat;
+            btnRemover.FlatAppearance.BorderSize = 1;
+            btnFinalizar.FlatStyle = FlatStyle.Flat;
+            btnFinalizar.FlatAppearance.BorderSize = 1;
+            btnNomes.FlatStyle = FlatStyle.Flat;
+            btnNomes.FlatAppearance.BorderSize = 1;
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

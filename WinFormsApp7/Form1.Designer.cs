@@ -37,7 +37,6 @@
             pictureBox1 = new PictureBox();
             numericQuant = new NumericUpDown();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             txtNome = new TextBox();
             label2 = new Label();
             listNomes = new ListBox();
@@ -46,6 +45,9 @@
             label3 = new Label();
             pictureBox2 = new PictureBox();
             checkBox1 = new CheckBox();
+            dateTimePicker2 = new DateTimePicker();
+            label4 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -54,11 +56,11 @@
             // btnAdicionar
             // 
             btnAdicionar.BackColor = Color.FromArgb(230, 255, 0);
-            btnAdicionar.Font = new Font("Perpetua", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdicionar.Font = new Font("Inter", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdicionar.ForeColor = Color.Black;
-            btnAdicionar.Location = new Point(865, 184);
+            btnAdicionar.Location = new Point(833, 195);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(83, 29);
+            btnAdicionar.Size = new Size(83, 32);
             btnAdicionar.TabIndex = 0;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = false;
@@ -67,9 +69,9 @@
             // btnRemover
             // 
             btnRemover.BackColor = Color.FromArgb(230, 255, 0);
-            btnRemover.Font = new Font("Perpetua", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRemover.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRemover.ForeColor = Color.Black;
-            btnRemover.Location = new Point(865, 246);
+            btnRemover.Location = new Point(833, 254);
             btnRemover.Name = "btnRemover";
             btnRemover.Size = new Size(83, 32);
             btnRemover.TabIndex = 1;
@@ -80,33 +82,33 @@
             // lblProdutos
             // 
             lblProdutos.BackColor = Color.FromArgb(202, 196, 183);
-            lblProdutos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProdutos.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProdutos.ForeColor = Color.FromArgb(17, 25, 12);
             lblProdutos.FormattingEnabled = true;
             lblProdutos.Location = new Point(465, 152);
             lblProdutos.Name = "lblProdutos";
-            lblProdutos.Size = new Size(300, 384);
+            lblProdutos.Size = new Size(277, 334);
             lblProdutos.TabIndex = 2;
             lblProdutos.SelectedIndexChanged += lblProdutos_SelectedIndexChanged;
             // 
             // lblCarrinho
             // 
             lblCarrinho.BackColor = Color.FromArgb(202, 196, 183);
-            lblCarrinho.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCarrinho.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCarrinho.ForeColor = Color.FromArgb(17, 25, 12);
             lblCarrinho.FormattingEnabled = true;
-            lblCarrinho.Location = new Point(1046, 152);
+            lblCarrinho.Location = new Point(1015, 152);
             lblCarrinho.Name = "lblCarrinho";
-            lblCarrinho.Size = new Size(296, 384);
+            lblCarrinho.Size = new Size(280, 334);
             lblCarrinho.TabIndex = 3;
             lblCarrinho.SelectedIndexChanged += lblCarrinho_SelectedIndexChanged;
             // 
             // btnFinalizar
             // 
             btnFinalizar.BackColor = Color.FromArgb(230, 255, 0);
-            btnFinalizar.Font = new Font("Microsoft Sans Serif", 8.25F);
-            btnFinalizar.ForeColor = Color.Black;
-            btnFinalizar.Location = new Point(804, 317);
+            btnFinalizar.Font = new Font("Inter", 17F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnFinalizar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnFinalizar.Location = new Point(769, 319);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(201, 54);
             btnFinalizar.TabIndex = 4;
@@ -118,11 +120,11 @@
             // 
             total.AutoSize = true;
             total.BackColor = Color.Transparent;
-            total.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            total.Font = new Font("Agrandir", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             total.ForeColor = Color.FromArgb(17, 25, 12);
-            total.Location = new Point(1058, 55);
+            total.Location = new Point(1028, 84);
             total.Name = "total";
-            total.Size = new Size(234, 32);
+            total.Size = new Size(255, 32);
             total.TabIndex = 6;
             total.Text = "Total a pagar:R$ 0,00";
             total.Click += total_Click;
@@ -151,21 +153,13 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(230, 255, 0);
             label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Agrandir", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(17, 25, 12);
             label1.Location = new Point(315, 258);
             label1.Name = "label1";
-            label1.Size = new Size(87, 20);
+            label1.Size = new Size(90, 20);
             label1.TabIndex = 10;
             label1.Text = "Quantidade";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(26, 549);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(238, 23);
-            dateTimePicker1.TabIndex = 11;
-            dateTimePicker1.Value = new DateTime(2025, 5, 19, 10, 37, 17, 0);
             // 
             // txtNome
             // 
@@ -180,22 +174,24 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(230, 255, 0);
-            label2.Font = new Font("Segoe UI", 12F);
+            label2.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(17, 25, 12);
             label2.Location = new Point(12, 66);
             label2.Name = "label2";
-            label2.Size = new Size(176, 21);
+            label2.Size = new Size(188, 21);
             label2.TabIndex = 13;
             label2.Text = "Insira o nome do cliente";
+            label2.Click += label2_Click_1;
             // 
             // listNomes
             // 
             listNomes.BackColor = Color.FromArgb(202, 196, 183);
+            listNomes.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listNomes.ForeColor = Color.FromArgb(17, 25, 12);
             listNomes.FormattingEnabled = true;
             listNomes.Location = new Point(12, 152);
             listNomes.Name = "listNomes";
-            listNomes.Size = new Size(266, 109);
+            listNomes.Size = new Size(266, 94);
             listNomes.TabIndex = 14;
             listNomes.SelectedIndexChanged += listNomes_SelectedIndexChanged;
             // 
@@ -203,6 +199,7 @@
             // 
             btnNomes.BackColor = Color.FromArgb(230, 255, 0);
             btnNomes.BackgroundImageLayout = ImageLayout.None;
+            btnNomes.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNomes.ForeColor = Color.FromArgb(17, 25, 12);
             btnNomes.Location = new Point(299, 103);
             btnNomes.Name = "btnNomes";
@@ -216,7 +213,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Pix", "Cartão", "Dinheiro" });
-            comboBox1.Location = new Point(849, 443);
+            comboBox1.Location = new Point(823, 444);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(108, 23);
             comboBox1.TabIndex = 16;
@@ -225,17 +222,18 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(17, 25, 12);
-            label3.Location = new Point(849, 408);
+            label3.Location = new Point(791, 409);
             label3.Name = "label3";
-            label3.Size = new Size(121, 15);
+            label3.Size = new Size(168, 21);
             label3.TabIndex = 17;
             label3.Text = "Forma de Pagamento";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.bolt_logo__1_;
-            pictureBox2.Location = new Point(573, -22);
+            pictureBox2.Location = new Point(571, -29);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(259, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -245,20 +243,53 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(865, 495);
+            checkBox1.Font = new Font("Agrandir", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBox1.Location = new Point(836, 482);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(66, 19);
+            checkBox1.Size = new Size(80, 24);
             checkBox1.TabIndex = 19;
             checkBox1.Text = "Viagem";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(21, 566);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(84, 23);
+            dateTimePicker2.TabIndex = 20;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(465, 128);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 21);
+            label4.TabIndex = 21;
+            label4.Text = "Produtos";
+            label4.Click += label4_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(1015, 128);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 21);
+            label5.TabIndex = 22;
+            label5.Text = "Carrinho";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
-            ClientSize = new Size(1388, 641);
+            ClientSize = new Size(1347, 612);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(dateTimePicker2);
             Controls.Add(checkBox1);
             Controls.Add(label3);
             Controls.Add(comboBox1);
@@ -266,7 +297,6 @@
             Controls.Add(listNomes);
             Controls.Add(label2);
             Controls.Add(txtNome);
-            Controls.Add(dateTimePicker1);
             Controls.Add(label1);
             Controls.Add(numericQuant);
             Controls.Add(total);
@@ -280,6 +310,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cantina";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -298,7 +329,6 @@
         private PictureBox pictureBox1;
         private NumericUpDown numericQuant;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
         private TextBox txtNome;
         private Label label2;
         private ListBox listNomes;
@@ -307,5 +337,8 @@
         private Label label3;
         private PictureBox pictureBox2;
         private CheckBox checkBox1;
+        private DateTimePicker dateTimePicker2;
+        private Label label4;
+        private Label label5;
     }
 }

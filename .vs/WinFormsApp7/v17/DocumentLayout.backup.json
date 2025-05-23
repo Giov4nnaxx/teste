@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -32,7 +36,7 @@
               "RelativeDocumentMoniker": "WinFormsApp7\\Produtos.cs",
               "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Produtos.cs",
               "RelativeToolTip": "WinFormsApp7\\Produtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T12:25:20.352Z",
               "EditorCaption": ""
@@ -43,9 +47,9 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs",
               "RelativeDocumentMoniker": "WinFormsApp7\\Form1.cs",
-              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs*",
-              "RelativeToolTip": "WinFormsApp7\\Form1.cs*",
-              "ViewState": "AgIAAGAAAAAAAAAAAADgv3UAAAAvAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs",
+              "RelativeToolTip": "WinFormsApp7\\Form1.cs",
+              "ViewState": "AgIAACcBAAAAAAAAAAApwDABAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T11:18:23.006Z",
               "EditorCaption": ""
@@ -56,8 +60,8 @@
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs",
               "RelativeDocumentMoniker": "WinFormsApp7\\Form1.cs",
-              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs [Projeto]*",
-              "RelativeToolTip": "WinFormsApp7\\Form1.cs [Projeto]*",
+              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs [Projeto]",
+              "RelativeToolTip": "WinFormsApp7\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T11:15:27.617Z",
               "EditorCaption": " [Projeto]"
