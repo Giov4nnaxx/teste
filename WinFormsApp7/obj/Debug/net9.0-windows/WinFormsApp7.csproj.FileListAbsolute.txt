@@ -35,3 +35,4 @@ C:\Users\25162850\Documents\Cantina 10.0\teste\WinFormsApp7\obj\Debug\net9.0-win
 C:\Users\25162850\Documents\Cantina 10.0\teste\WinFormsApp7\obj\Debug\net9.0-windows\WinFormsApp7.pdb
 C:\Users\25162850\Documents\Cantina 10.0\teste\WinFormsApp7\obj\Debug\net9.0-windows\WinFormsApp7.genruntimeconfig.cache
 C:\Users\25162850\Documents\Cantina 10.0\teste\WinFormsApp7\obj\Debug\net9.0-windows\ref\WinFormsApp7.dll
+C:\Users\25162850\Documents\Cantina 10.0\teste\WinFormsApp7\obj\Debug\net9.0-windows\WinFormsApp7.Balcao.resources

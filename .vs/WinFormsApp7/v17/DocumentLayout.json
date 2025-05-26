@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|c:\\users\\25162850\\documents\\cantina 10.0\\teste\\winformsapp7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|c:\\users\\25162850\\documents\\cantina 10.0\\teste\\winformsapp7\\balcao.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\balcao.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|c:\\users\\25162850\\documents\\cantina 10.0\\teste\\winformsapp7\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|c:\\users\\25162850\\documents\\cantina 10.0\\teste\\winformsapp7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|c:\\users\\25162850\\documents\\cantina 10.0\\teste\\winformsapp7\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\winformsapp7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|c:\\users\\25162850\\documents\\cantina 10.0\\teste\\winformsapp7\\balcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C82922AA-2B01-4E26-AC57-0919397E54E7}|WinFormsApp7\\WinFormsApp7.csproj|solutionrelative:winformsapp7\\balcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,33 +38,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Produtos.cs",
-              "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Produtos.cs",
-              "RelativeDocumentMoniker": "WinFormsApp7\\Produtos.cs",
-              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Produtos.cs",
-              "RelativeToolTip": "WinFormsApp7\\Produtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Balcao.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Balcao.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp7\\Balcao.Designer.cs",
+              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Balcao.Designer.cs",
+              "RelativeToolTip": "WinFormsApp7\\Balcao.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAADgvygAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T12:25:20.352Z",
+              "WhenOpened": "2025-05-26T12:29:43.737Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Produtos.cs",
+              "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Produtos.cs",
+              "RelativeDocumentMoniker": "WinFormsApp7\\Produtos.cs",
+              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Produtos.cs",
+              "RelativeToolTip": "WinFormsApp7\\Produtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:44:02.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Balcao.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Balcao.cs",
+              "RelativeDocumentMoniker": "WinFormsApp7\\Balcao.cs",
+              "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Balcao.cs [Projeto]",
+              "RelativeToolTip": "WinFormsApp7\\Balcao.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:28:59.385Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs",
               "RelativeDocumentMoniker": "WinFormsApp7\\Form1.cs",
               "ToolTip": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs",
               "RelativeToolTip": "WinFormsApp7\\Form1.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAEwHcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACUBAAAAAAAAAAD4vzkBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T11:18:23.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\25162850\\Documents\\Cantina 10.0\\teste\\WinFormsApp7\\Form1.cs",
               "RelativeDocumentMoniker": "WinFormsApp7\\Form1.cs",

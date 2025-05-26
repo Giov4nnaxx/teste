@@ -310,6 +310,8 @@ namespace WinFormsApp7
             btnFinalizar.FlatAppearance.BorderSize = 1;
             btnNomes.FlatStyle = FlatStyle.Flat;
             btnNomes.FlatAppearance.BorderSize = 1;
+            btnBalcao.FlatStyle = FlatStyle.Flat;
+            btnBalcao.FlatAppearance.BorderSize = 1;
 
         }
 
@@ -321,6 +323,12 @@ namespace WinFormsApp7
         private void label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Balcao balcao = new Balcao(); 
+            balcao.Show();
         }
     }
 }

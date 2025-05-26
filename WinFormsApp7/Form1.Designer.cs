@@ -48,6 +48,7 @@
             dateTimePicker2 = new DateTimePicker();
             label4 = new Label();
             label5 = new Label();
+            btnBalcao = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -233,7 +234,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.bolt_logo__1_;
-            pictureBox2.Location = new Point(571, -29);
+            pictureBox2.Location = new Point(583, -29);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(259, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -281,12 +282,25 @@
             label5.TabIndex = 22;
             label5.Text = "Carrinho";
             // 
+            // btnBalcao
+            // 
+            btnBalcao.BackColor = Color.FromArgb(230, 255, 0);
+            btnBalcao.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBalcao.Location = new Point(1209, 534);
+            btnBalcao.Name = "btnBalcao";
+            btnBalcao.Size = new Size(86, 30);
+            btnBalcao.TabIndex = 23;
+            btnBalcao.Text = "Balcão";
+            btnBalcao.UseVisualStyleBackColor = false;
+            btnBalcao.Click += button1_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1347, 612);
+            Controls.Add(btnBalcao);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(dateTimePicker2);
@@ -340,5 +354,6 @@
         private DateTimePicker dateTimePicker2;
         private Label label4;
         private Label label5;
+        private Button btnBalcao;
     }
 }
