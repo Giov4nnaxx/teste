@@ -5,12 +5,15 @@ namespace WinFormsApp7
     public partial class Form1 : Form
     {
 
+        private List<string> pedidosPendentes = new List<string>();
+
         List<Produtos> produtos = new List<Produtos>();
 
         List<Produtos> carrinhos = new List<Produtos>();
 
         decimal totalCarrinho = 0;
 
+        private Balcao balcaoForm;
 
         public Form1()
         {
@@ -84,6 +87,21 @@ namespace WinFormsApp7
 
                 ListarCarrinho();
                 TotalPagar();
+
+                string nome = listNomes.Text;
+                string horario = DateTime.Now.ToString("HH:mm:ss");
+
+                string itemPedido = $"Nome do Cliente : {nome}  Horário :{horario}";
+                foreach (var produto in carrinhos)
+                {
+                    itemPedido += $"x {produto.Quantidade} {produto.Descricao} - R$ {produto.Preco:F2}";
+                }
+                pedidosPendentes.Add(itemPedido);
+
+                if (balcaoForm != null && !balcaoForm.IsDisposed)
+                {
+                    balcaoForm.AdicionarPedido(itemPedido);
+                }
 
                 lblProdutos.SelectedIndex = -1;
                 numericQuant.Value = 1;
@@ -160,6 +178,8 @@ namespace WinFormsApp7
                     Pagamento();
                 }
             }
+
+            
         }
 
         private void TotalPagar()
@@ -327,8 +347,21 @@ namespace WinFormsApp7
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Balcao balcao = new Balcao(); 
-            balcao.Show();
+            if (balcaoForm == null || balcaoForm.IsDisposed)
+            {
+                balcaoForm = new Balcao();
+                foreach (var pedido in pedidosPendentes)
+                {
+                    balcaoForm.AdicionarPedido(pedido);
+                }
+
+                balcaoForm.Show();
+            }
+            else
+            {
+                balcaoForm.BringToFront();
+            }
+            
         }
     }
 }

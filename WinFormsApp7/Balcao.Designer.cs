@@ -34,6 +34,7 @@
             listHistorico = new ListBox();
             label1 = new Label();
             label2 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -68,6 +69,7 @@
             listBalcao.Name = "listBalcao";
             listBalcao.Size = new Size(527, 202);
             listBalcao.TabIndex = 21;
+            listBalcao.SelectedIndexChanged += listBalcao_SelectedIndexChanged;
             // 
             // listHistorico
             // 
@@ -101,12 +103,22 @@
             label2.TabIndex = 24;
             label2.Text = "Pedidos";
             // 
+            // button1
+            // 
+            button1.Location = new Point(611, 157);
+            button1.Name = "button1";
+            button1.Size = new Size(131, 42);
+            button1.TabIndex = 25;
+            button1.Text = "Entregar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Balcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1066, 640);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(listHistorico);
@@ -116,6 +128,7 @@
             Name = "Balcao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Balcao";
+            Load += Balcao_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -129,5 +142,6 @@
         private ListBox listHistorico;
         private Label label1;
         private Label label2;
+        private Button button1;
     }
 }

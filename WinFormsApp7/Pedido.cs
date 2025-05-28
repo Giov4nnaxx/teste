@@ -10,19 +10,21 @@ namespace WinFormsApp7
     {
         public string Cliente { get; set; }
         public int Quantidade { get; set; }
-        public string Item { get; set; }
-        public int Hora { get; set; }
+        public string Produto { get; set; }
+        public string Data { get; set; }   
+
+
     }
     internal static class Pedidos
     {
-        public static Pedido SalvarPedido(string cliente, string item, int hora, int quantidade = 1)
+        public static Pedido SalvarPedido(string cliente, string produto, string data, int quantidade = 1)
         {
             return new Pedido
             {
                 Cliente = cliente,
                 Quantidade = quantidade,
-                Item = item,
-                Hora = hora
+                Produto = produto,
+                Data = data
             };
         }
     }
