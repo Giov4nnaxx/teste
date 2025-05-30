@@ -24,6 +24,29 @@ namespace WinFormsApp7
             ListarProdutos();
         }
 
+        private void EnviarPedidoBalcao()
+        {
+            string nome = listNomes.SelectedItem.ToString();
+            string horario = DateTime.Now.ToString("HH:mm:ss");
+
+            var produtosPedido = carrinhos.Select(p=> new Produtos (p.Descricao, p.Preco, p.Quantidade)).ToList();
+
+            if (balcaoForm != null || balcaoForm.IsDisposed)
+                balcaoForm = new Balcao();
+
+            string pedidoFormatado = $"Nome: {nome} | Horário: {horario}\nProdutos:\n";
+
+            foreach (var prod in produtosPedido)
+            {
+                pedidoFormatado += $"- {prod.Quantidade}x {prod.Descricao} (R$ {prod.Preco:F2})\n";
+            }
+
+            balcaoForm.AdicionarPedido(pedidoFormatado);
+            balcaoForm.Show();
+            balcaoForm.Show();
+
+        }
+
         private void AdicionarProduto()
         {
             produtos.Add(new Produtos("Pão de Queijo", 3.50m));
@@ -87,21 +110,6 @@ namespace WinFormsApp7
 
                 ListarCarrinho();
                 TotalPagar();
-
-                string nome = listNomes.Text;
-                string horario = DateTime.Now.ToString("HH:mm:ss");
-
-                string itemPedido = $"Nome do Cliente : {nome}  Horário :{horario}";
-                foreach (var produto in carrinhos)
-                {
-                    itemPedido += $"x {produto.Quantidade} {produto.Descricao} - R$ {produto.Preco:F2}";
-                }
-                pedidosPendentes.Add(itemPedido);
-
-                if (balcaoForm != null && !balcaoForm.IsDisposed)
-                {
-                    balcaoForm.AdicionarPedido(itemPedido);
-                }
 
                 lblProdutos.SelectedIndex = -1;
                 numericQuant.Value = 1;
@@ -255,6 +263,7 @@ namespace WinFormsApp7
                 ListarCarrinho();
                 TotalPagar();
                 listNomes.Items.Clear();
+                EnviarPedidoBalcao();
             }
         }
 

@@ -34,7 +34,7 @@
             listHistorico = new ListBox();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
+            btnEntregar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -88,9 +88,9 @@
             label1.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(22, 344);
             label1.Name = "label1";
-            label1.Size = new Size(163, 21);
+            label1.Size = new Size(149, 21);
             label1.TabIndex = 23;
-            label1.Text = "Histórico de Pedidos";
+            label1.Text = "Pedidos Entregues";
             // 
             // label2
             // 
@@ -103,14 +103,17 @@
             label2.TabIndex = 24;
             label2.Text = "Pedidos";
             // 
-            // button1
+            // btnEntregar
             // 
-            button1.Location = new Point(611, 157);
-            button1.Name = "button1";
-            button1.Size = new Size(131, 42);
-            button1.TabIndex = 25;
-            button1.Text = "Entregar";
-            button1.UseVisualStyleBackColor = true;
+            btnEntregar.BackColor = Color.FromArgb(230, 255, 0);
+            btnEntregar.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEntregar.Location = new Point(617, 304);
+            btnEntregar.Name = "btnEntregar";
+            btnEntregar.Size = new Size(197, 50);
+            btnEntregar.TabIndex = 25;
+            btnEntregar.Text = "Entregar";
+            btnEntregar.UseVisualStyleBackColor = false;
+            btnEntregar.Click += btnEntregar_Click;
             // 
             // Balcao
             // 
@@ -118,7 +121,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1066, 640);
-            Controls.Add(button1);
+            Controls.Add(btnEntregar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(listHistorico);
@@ -142,6 +145,6 @@
         private ListBox listHistorico;
         private Label label1;
         private Label label2;
-        private Button button1;
+        private Button btnEntregar;
     }
 }

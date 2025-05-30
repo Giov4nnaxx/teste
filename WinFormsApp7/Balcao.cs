@@ -17,10 +17,16 @@ namespace WinFormsApp7
         public Balcao()
         {
             InitializeComponent();
+            PedidosPendentes = new List<string>();
         }
 
         public void AdicionarPedido(string pedido)
         {
+            if (PedidosPendentes == null)
+                PedidosPendentes = new List<string>();
+
+            PedidosPendentes.Add(pedido);
+
             listBalcao.Items.Add(pedido);
         }
 
@@ -31,7 +37,22 @@ namespace WinFormsApp7
 
         private void Balcao_Load(object sender, EventArgs e)
         {
+            btnEntregar.FlatStyle = FlatStyle.Flat;
+            btnEntregar.FlatAppearance.BorderSize = 1;
 
+            listBalcao.Items.Clear();
+            if (PedidosPendentes != null)
+            {
+                foreach (var pedido in PedidosPendentes)
+                {
+                    listBalcao.Items.Add(pedido);
+                }
+            }
+        }
+
+        private void btnEntregar_Click(object sender, EventArgs e)
+        {
+       
         }
     }
 }
