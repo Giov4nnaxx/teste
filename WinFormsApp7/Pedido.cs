@@ -8,27 +8,31 @@ namespace WinFormsApp7
 {
     internal class Pedido
     {
-        public string Cliente { get; set; }
-        public int Quantidade { get; set; }
-        public string Produto { get; set; }
-        public DateTime Data { get; set; }
+        public List<Produtos> produtos;
+        private string cliente { get; set; }
+        string metodo_pag;
+        string viagem;
+        string status;
+        string data;
+        
+        public string Cliente
+        {
+            get { return cliente; }
+            set { cliente = value; }
+        }
+        public Pedido(string cliente, string metodo_pag, string viagem)
+        {
+            this.produtos = produtos;
+            this.cliente = cliente;
+            this.metodo_pag = metodo_pag;
+            this.viagem = viagem;
+        }
 
         public override string ToString()
         {
-            return $"Nome do Cliente: {Cliente} Data e Horário: {Data}";
-        }
-    }
-    internal static class Pedidos
-    {
-        public static Pedido SalvarPedido(string cliente, string produto, DateTime data, int quantidade = 1)
-        {
-            return new Pedido
-            {
-                Cliente = cliente,
-                Quantidade = quantidade,
-                Produto = produto,
-                Data = data
-            };
+            return $"Nome do Cliente: {Cliente} Produtos: {string.Join("\n, ", produtos)}";
         }
     }
 }
+    
+
