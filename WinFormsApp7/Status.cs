@@ -8,8 +8,8 @@ namespace WinFormsApp7
 {
     public enum Status
     {
-        Preparando,
-        Pronto,
-        Entregue,
+        PREPARANDO,
+        PRONTO,
+        ENTREGUE,
     };
 }

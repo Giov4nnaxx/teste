@@ -5,7 +5,7 @@ namespace WinFormsApp7
     public partial class Form1 : Form
     {
 
-        private List<string> pedidosPendentes = new List<string>();
+        public static List<string> pedidosPendentes = new List<string>();
 
         List<Produtos> produtos = new List<Produtos>();
 
@@ -26,16 +26,16 @@ namespace WinFormsApp7
 
         private void AdicionarProduto()
         {
-            produtos.Add(new Produtos("Pão de Queijo", 3.50m));
-            produtos.Add(new Produtos("Coxinha", 5.00m));
-            produtos.Add(new Produtos("Pastel de Carne", 6.00m));
-            produtos.Add(new Produtos("Pastel de Queijo", 5.50m));
-            produtos.Add(new Produtos("Suco Natural (300ml)", 4.00m));
-            produtos.Add(new Produtos("Refrigerante Lata", 4.50m));
-            produtos.Add(new Produtos("Hambúrguer Simples", 8.00m));
-            produtos.Add(new Produtos("Hambúrguer com Queijo", 9.00m));
-            produtos.Add(new Produtos("X-Tudo", 12.00m));
-            produtos.Add(new Produtos("Água Mineral", 2.50m));
+            produtos.Add(new Produtos("Pão de Queijo", 3.50m, false));
+            produtos.Add(new Produtos("Coxinha", 5.00m, false));
+            produtos.Add(new Produtos("Pastel de Carne", 6.00m, true));
+            produtos.Add(new Produtos("Pastel de Queijo", 5.50m, true));
+            produtos.Add(new Produtos("Suco Natural (300ml)", 4.00m, false));
+            produtos.Add(new Produtos("Refrigerante Lata", 4.50m, false));
+            produtos.Add(new Produtos("Hambúrguer Simples", 8.00m, true));
+            produtos.Add(new Produtos("Hambúrguer com Queijo", 9.00m, true));
+            produtos.Add(new Produtos("X-Tudo", 12.00m, true));
+            produtos.Add(new Produtos("Água Mineral", 2.50m, false));
         }
 
 
@@ -79,7 +79,7 @@ namespace WinFormsApp7
                 }
                 else
                 {
-                    Produtos novoProduto = new Produtos(produtoSelecionado.Descricao, produtoSelecionado.Preco, quant);
+                    Produtos novoProduto = new Produtos(produtoSelecionado.Descricao, produtoSelecionado.Preco);
                     carrinhos.Add(novoProduto);
                 }
 
@@ -103,7 +103,7 @@ namespace WinFormsApp7
         }
         private void Extrato()
         {
-            string nomeDoCliente = listNomes.SelectedItem?.ToString() ?? "(Sem cliente)";
+            string nomeDoCliente = txtNome.Text.ToString() ?? "(Sem cliente)";
             string formaDePagamento = comboBox1.SelectedItem?.ToString() ?? "(Sem pagamento)";
             string dataAtual = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
@@ -112,7 +112,6 @@ namespace WinFormsApp7
                 MessageBox.Show("Carrinho vazio.", "Extrato da Compra");
                 return;
             }
-
 
             string extrato = $"Nome do Cliente: {nomeDoCliente}\n\nForma de Pagamento: {formaDePagamento}\n\nProdutos:\n";
             foreach (var produto in carrinhos)
@@ -212,6 +211,8 @@ namespace WinFormsApp7
 
         }
 
+        
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (carrinhos.Count == 0)
@@ -219,7 +220,7 @@ namespace WinFormsApp7
                 MessageBox.Show("Carrinho vazio");
                 return;
             }
-            else if (listNomes.Items.Count == 0)
+            else if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
                 MessageBox.Show("Sem Cliente Cadastrado");
                 return;
@@ -231,6 +232,8 @@ namespace WinFormsApp7
             }
 
             var resultado = MessageBox.Show($"Total a pagar: R$ {totalCarrinho:F2}", "Finalizar compra", MessageBoxButtons.YesNo);
+            var formaDePagamento = comboBox1.SelectedItem?.ToString() ?? "(Sem pagamento)";
+            var viagem = checkBox1.Checked ? "Sim" : "Não";
 
             if (resultado == DialogResult.Yes)
             {
@@ -239,8 +242,27 @@ namespace WinFormsApp7
                 totalCarrinho = 0;
                 ListarCarrinho();
                 TotalPagar();
-                listNomes.Items.Clear();
+                txtNome.Clear();
+                comboBox1.Text = "";
+                checkBox1.Checked = false;
+                
             }
+            bool pedidoChapa = false;
+
+            if (pedidoChapa)
+            {
+                Status statusPedidos = Status.PREPARANDO;
+                var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, new List<Produtos>(carrinhos), statusPedidos);
+                PedidosFinalizados.pedidosFinalizados.Add(novoPedido);
+            }
+            else
+            {
+                Status statusPedidos = Status.ENTREGUE;
+                var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, new List<Produtos>(carrinhos), statusPedidos);
+                PedidosFinalizados.pedidosFinalizados.Add(novoPedido);
+            }
+
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -288,16 +310,6 @@ namespace WinFormsApp7
         {
             Pagamento();
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtNome.Text))
-            {
-                listNomes.Items.Add(txtNome.Text);
-                listNomes.SelectedIndex = listNomes.Items.Count - 1;
-                txtNome.Clear();
-            }
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -313,8 +325,6 @@ namespace WinFormsApp7
             btnRemover.FlatAppearance.BorderSize = 1;
             btnFinalizar.FlatStyle = FlatStyle.Flat;
             btnFinalizar.FlatAppearance.BorderSize = 1;
-            btnNomes.FlatStyle = FlatStyle.Flat;
-            btnNomes.FlatAppearance.BorderSize = 1;
             btnBalcao.FlatStyle = FlatStyle.Flat;
             btnBalcao.FlatAppearance.BorderSize = 1;
         }

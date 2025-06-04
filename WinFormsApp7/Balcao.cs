@@ -31,6 +31,11 @@ namespace WinFormsApp7
         {
             btnEntregar.FlatStyle = FlatStyle.Flat;
             btnEntregar.FlatAppearance.BorderSize = 1;
+
+            foreach (Pedido pedido in PedidosFinalizados.pedidosFinalizados)
+            {
+              
+            }
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)

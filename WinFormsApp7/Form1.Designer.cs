@@ -39,8 +39,6 @@
             label1 = new Label();
             txtNome = new TextBox();
             label2 = new Label();
-            listNomes = new ListBox();
-            btnNomes = new Button();
             comboBox1 = new ComboBox();
             label3 = new Label();
             pictureBox2 = new PictureBox();
@@ -167,7 +165,7 @@
             txtNome.BackColor = Color.FromArgb(243, 241, 238);
             txtNome.Location = new Point(12, 108);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(266, 23);
+            txtNome.Size = new Size(315, 23);
             txtNome.TabIndex = 12;
             txtNome.TextChanged += textBox1_TextChanged;
             // 
@@ -183,32 +181,6 @@
             label2.TabIndex = 13;
             label2.Text = "Insira o nome do cliente";
             label2.Click += label2_Click_1;
-            // 
-            // listNomes
-            // 
-            listNomes.BackColor = Color.FromArgb(202, 196, 183);
-            listNomes.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            listNomes.ForeColor = Color.FromArgb(17, 25, 12);
-            listNomes.FormattingEnabled = true;
-            listNomes.Location = new Point(12, 152);
-            listNomes.Name = "listNomes";
-            listNomes.Size = new Size(266, 94);
-            listNomes.TabIndex = 14;
-            listNomes.SelectedIndexChanged += listNomes_SelectedIndexChanged;
-            // 
-            // btnNomes
-            // 
-            btnNomes.BackColor = Color.FromArgb(230, 255, 0);
-            btnNomes.BackgroundImageLayout = ImageLayout.None;
-            btnNomes.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNomes.ForeColor = Color.FromArgb(17, 25, 12);
-            btnNomes.Location = new Point(299, 103);
-            btnNomes.Name = "btnNomes";
-            btnNomes.Size = new Size(91, 30);
-            btnNomes.TabIndex = 15;
-            btnNomes.Text = "Adicionar";
-            btnNomes.UseVisualStyleBackColor = false;
-            btnNomes.Click += button2_Click;
             // 
             // comboBox1
             // 
@@ -307,8 +279,6 @@
             Controls.Add(checkBox1);
             Controls.Add(label3);
             Controls.Add(comboBox1);
-            Controls.Add(btnNomes);
-            Controls.Add(listNomes);
             Controls.Add(label2);
             Controls.Add(txtNome);
             Controls.Add(label1);
@@ -345,8 +315,6 @@
         private Label label1;
         private TextBox txtNome;
         private Label label2;
-        private ListBox listNomes;
-        private Button btnNomes;
         private ComboBox comboBox1;
         private Label label3;
         private PictureBox pictureBox2;
