@@ -17,11 +17,6 @@ namespace WinFormsApp7
             InitializeComponent();
         }
 
-        public void AdicionarPedido(string pedido)
-        {
-           
-        }
-
         private void listBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -32,9 +27,16 @@ namespace WinFormsApp7
             btnEntregar.FlatStyle = FlatStyle.Flat;
             btnEntregar.FlatAppearance.BorderSize = 1;
 
-            foreach (Pedido pedido in PedidosFinalizados.pedidosFinalizados)
+            listBalcao.Items.Clear();
+
+            foreach (var pedido in PedidosFinalizados.pedidosFinalizados)
             {
-              
+                if (pedido.status == Status.PRONTO)
+                    listBalcao.Items.Add(pedido.ToString());
+                else
+                {
+                    listEntregues.Items.Add(pedido.ToString());
+                }
             }
         }
 

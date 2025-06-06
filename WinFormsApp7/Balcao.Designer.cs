@@ -31,7 +31,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             listBalcao = new ListBox();
-            listHistorico = new ListBox();
+            listEntregues = new ListBox();
             label1 = new Label();
             label2 = new Label();
             btnEntregar = new Button();
@@ -72,16 +72,16 @@
             listBalcao.TabIndex = 21;
             listBalcao.SelectedIndexChanged += listBalcao_SelectedIndexChanged;
             // 
-            // listHistorico
+            // listEntregues
             // 
-            listHistorico.BackColor = Color.FromArgb(202, 196, 183);
-            listHistorico.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            listHistorico.ForeColor = Color.FromArgb(17, 25, 12);
-            listHistorico.FormattingEnabled = true;
-            listHistorico.Location = new Point(22, 383);
-            listHistorico.Name = "listHistorico";
-            listHistorico.Size = new Size(527, 202);
-            listHistorico.TabIndex = 22;
+            listEntregues.BackColor = Color.FromArgb(202, 196, 183);
+            listEntregues.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listEntregues.ForeColor = Color.FromArgb(17, 25, 12);
+            listEntregues.FormattingEnabled = true;
+            listEntregues.Location = new Point(22, 383);
+            listEntregues.Name = "listEntregues";
+            listEntregues.Size = new Size(527, 202);
+            listEntregues.TabIndex = 22;
             // 
             // label1
             // 
@@ -125,7 +125,7 @@
             Controls.Add(btnEntregar);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(listHistorico);
+            Controls.Add(listEntregues);
             Controls.Add(listBalcao);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -143,7 +143,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private ListBox listBalcao;
-        private ListBox listHistorico;
+        private ListBox listEntregues;
         private Label label1;
         private Label label2;
         private Button btnEntregar;

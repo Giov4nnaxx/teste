@@ -8,26 +8,28 @@ namespace WinFormsApp7
 {
     internal class Pedido
     {
-        public static List<Produtos> produtos;
-        public string cliente { get; set; }
-        public string metodo_pag {  get; set; }
-        public bool viagem { get; set; }
+        public static List<Produtos> produtos = new List<Produtos>();
+        public string Cliente { get; set; }
+        public string Metodo_pag { get; set; }
+        public string Viagem { get; set; }
         public Status status { get; set; }
-        public DateTime dataHora { get; set; }
-   
-        public Pedido(string cliente, string metodo_pag, string viagem, List<Produtos> produtos,Status status)
-        {
-            Pedido.produtos = produtos; 
-            cliente = cliente;
-            metodo_pag = metodo_pag;
-            viagem = viagem;
-            this.status = status;
-            dataHora = DateTime.Now;
-        }
+        public DateTime DataHora { get; set; }
+
+
+        //public Pedido(string cliente, string metodo_pag, string viagem, List<Produtos> produtos, Status status)
+        //{
+        //    Pedido.produtos = produtos;
+        //    Cliente = cliente;
+        //    Metodo_pag = metodo_pag;
+        //    Viagem = viagem;
+        //    this.status = status;
+        //    DataHora = DateTime.Now;
+        //}
 
         public override string ToString()
         {
-            return $"Nome do Cliente: {cliente} Produtos: {string.Join("\n, ", produtos)}";
+            string produtosDescricao = string.Join(", ", produtos.Select(p => p.Descricao));
+            return $"{Cliente} - {produtosDescricao}";
         }
     }
 }

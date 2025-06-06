@@ -4,9 +4,6 @@ namespace WinFormsApp7
 {
     public partial class Form1 : Form
     {
-
-        public static List<string> pedidosPendentes = new List<string>();
-
         List<Produtos> produtos = new List<Produtos>();
 
         List<Produtos> carrinhos = new List<Produtos>();
@@ -18,9 +15,7 @@ namespace WinFormsApp7
         public Form1()
         {
             InitializeComponent();
-
             AdicionarProduto();
-
             ListarProdutos();
         }
 
@@ -79,7 +74,10 @@ namespace WinFormsApp7
                 }
                 else
                 {
-                    Produtos novoProduto = new Produtos(produtoSelecionado.Descricao, produtoSelecionado.Preco);
+                    Produtos novoProduto = new Produtos(produtoSelecionado.Descricao, produtoSelecionado.Preco, produtoSelecionado.IsChapa)
+                    {
+                        Quantidade = quant
+                    };
                     carrinhos.Add(novoProduto);
                 }
 
@@ -211,7 +209,7 @@ namespace WinFormsApp7
 
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -245,24 +243,30 @@ namespace WinFormsApp7
                 txtNome.Clear();
                 comboBox1.Text = "";
                 checkBox1.Checked = false;
-                
+
             }
+
+            Pedido produto = new Pedido();
+            Pedido.produtos = lblCarrinho.Items.Cast<Produtos>().ToList();
             bool pedidoChapa = false;
-
-            if (pedidoChapa)
+            foreach (Produtos item in Pedido.produtos)
             {
-                Status statusPedidos = Status.PREPARANDO;
-                var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, new List<Produtos>(carrinhos), statusPedidos);
-                PedidosFinalizados.pedidosFinalizados.Add(novoPedido);
-            }
-            else
-            {
-                Status statusPedidos = Status.ENTREGUE;
-                var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, new List<Produtos>(carrinhos), statusPedidos);
-                PedidosFinalizados.pedidosFinalizados.Add(novoPedido);
-            }
 
-            
+                if (pedidoChapa)
+                {
+                    Status statusPedidos = Status.PREPARANDO;
+                    ///var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, carrinhos, statusPedidos);
+                    PedidosFinalizados.pedidosFinalizados.Add(produto);
+                }
+                else
+                {
+                    Status statusPedidos = Status.PRONTO;
+                    //var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, carrinhos, statusPedidos);
+                    PedidosFinalizados.pedidosFinalizados.Add(produto);
+                }
+
+                PedidosFinalizados.pedidosFinalizados.Add(produto);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -297,7 +301,7 @@ namespace WinFormsApp7
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            string cliente = txtNome.Text;
 
         }
 

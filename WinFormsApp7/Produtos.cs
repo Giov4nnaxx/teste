@@ -8,17 +8,17 @@
         public decimal Preco { get; set; }
         public int Quantidade { get; set; }
 
-        public Produtos(string descricao, decimal preco, bool isChapa = false)
+        public Produtos(string descricao, decimal preco, bool isChapa)
         {
             Descricao = descricao;
             Preco = preco;
-            Quantidade = 0;
+            Quantidade = 1;
             this.IsChapa = isChapa;
         }
 
         public override string ToString()
         {
-            return $" {Descricao} - R$ {(Preco * Quantidade):F2}";
+            return $" {Descricao} - R$ {(Preco*Quantidade):F2}";
         }
     }
 }
