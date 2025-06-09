@@ -82,6 +82,7 @@
             listEntregues.Name = "listEntregues";
             listEntregues.Size = new Size(527, 202);
             listEntregues.TabIndex = 22;
+            listEntregues.SelectedIndexChanged += listEntregues_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             // 
             btnEntregar.BackColor = Color.FromArgb(230, 255, 0);
             btnEntregar.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntregar.Location = new Point(617, 304);
+            btnEntregar.Location = new Point(612, 306);
             btnEntregar.Name = "btnEntregar";
             btnEntregar.Size = new Size(197, 50);
             btnEntregar.TabIndex = 25;

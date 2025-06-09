@@ -25,7 +25,7 @@ namespace WinFormsApp7
             produtos.Add(new Produtos("Coxinha", 5.00m, false));
             produtos.Add(new Produtos("Pastel de Carne", 6.00m, true));
             produtos.Add(new Produtos("Pastel de Queijo", 5.50m, true));
-            produtos.Add(new Produtos("Suco Natural (300ml)", 4.00m, false));
+            produtos.Add(new Produtos("Suco Natural (300ml)", 4.00m, true));
             produtos.Add(new Produtos("Refrigerante Lata", 4.50m, false));
             produtos.Add(new Produtos("Hambúrguer Simples", 8.00m, true));
             produtos.Add(new Produtos("Hambúrguer com Queijo", 9.00m, true));
@@ -48,7 +48,7 @@ namespace WinFormsApp7
             lblCarrinho.Items.Clear();
             foreach (var carrinho in carrinhos)
             {
-                lblCarrinho.Items.Add($"x{carrinho.Quantidade} {carrinho.Descricao} - R$ {carrinho.Preco * carrinho.Quantidade:F2}");
+                lblCarrinho.Items.Add($"{carrinho.Quantidade}x {carrinho.Descricao} - R${carrinho.Preco *carrinho.Quantidade:F2}");
             }
         }
         private void lblProdutos_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,7 +204,6 @@ namespace WinFormsApp7
 
             ListarCarrinho();
             TotalPagar();
-            Extrato();
             numericQuant.Value = 1;
 
         }
@@ -236,6 +235,20 @@ namespace WinFormsApp7
             if (resultado == DialogResult.Yes)
             {
                 Extrato();
+                bool pedidoChapa = carrinhos.Any(p => p.IsChapa);
+                Status status = pedidoChapa ? Status.PREPARANDO : Status.PRONTO;
+
+                var novoPedido = new Pedido(
+                    txtNome.Text,
+                    comboBox1.SelectedItem?.ToString() ?? "(Sem pagamento)",
+                    checkBox1.Checked ? "Sim" : "Não",
+                    new List<Produtos>(carrinhos),
+                    status
+                );
+                PedidosFinalizados.pedidosFinalizados.Add(novoPedido);
+
+                balcaoForm?.AtualizarPedidos();
+
                 carrinhos.Clear();
                 totalCarrinho = 0;
                 ListarCarrinho();
@@ -243,32 +256,9 @@ namespace WinFormsApp7
                 txtNome.Clear();
                 comboBox1.Text = "";
                 checkBox1.Checked = false;
-
-            }
-
-            Pedido produto = new Pedido();
-            Pedido.produtos = lblCarrinho.Items.Cast<Produtos>().ToList();
-            bool pedidoChapa = false;
-            foreach (Produtos item in Pedido.produtos)
-            {
-
-                if (pedidoChapa)
-                {
-                    Status statusPedidos = Status.PREPARANDO;
-                    ///var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, carrinhos, statusPedidos);
-                    PedidosFinalizados.pedidosFinalizados.Add(produto);
-                }
-                else
-                {
-                    Status statusPedidos = Status.PRONTO;
-                    //var novoPedido = new Pedido(txtNome.Text, formaDePagamento, viagem, carrinhos, statusPedidos);
-                    PedidosFinalizados.pedidosFinalizados.Add(produto);
-                }
-
-                PedidosFinalizados.pedidosFinalizados.Add(produto);
             }
         }
-
+        
         private void label2_Click(object sender, EventArgs e)
         {
 
