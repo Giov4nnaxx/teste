@@ -18,7 +18,10 @@
 
         public override string ToString()
         {
-            return $"{Descricao} - R$ {(Preco*Quantidade):F2}";
+            if (Quantidade > 1)
+                return $"{Quantidade}x {Descricao} - R${Preco * Quantidade:F2}";
+            else
+                return $"{Descricao} - R${Preco:F2}";
         }
     }
 }

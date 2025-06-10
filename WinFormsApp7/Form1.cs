@@ -48,7 +48,7 @@ namespace WinFormsApp7
             lblCarrinho.Items.Clear();
             foreach (var carrinho in carrinhos)
             {
-                lblCarrinho.Items.Add($"{carrinho.Quantidade}x {carrinho.Descricao} - R${carrinho.Preco *carrinho.Quantidade:F2}");
+                lblCarrinho.Items.Add(carrinho); 
             }
         }
         private void lblProdutos_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace WinFormsApp7
                 MessageBox.Show("Selecione um produto");
                 return;
             }
-            var produto = (Produtos)lblCarrinho.SelectedItem;
+            var produto = lblCarrinho.SelectedItem as Produtos;
 
             int quantidadeRemover = (int)numericQuant.Value;
 
