@@ -46,8 +46,8 @@ namespace WinFormsApp7
 
         private void Balcao_Load(object sender, EventArgs e)
         {
-            btnEntregar.FlatStyle = FlatStyle.Flat;
-            btnEntregar.FlatAppearance.BorderSize = 1;
+            btnEntregarCozinha.FlatStyle = FlatStyle.Flat;
+            btnEntregarCozinha.FlatAppearance.BorderSize = 1;
 
             //listBalcao.Items.Clear();
 

@@ -11,6 +11,7 @@ namespace WinFormsApp7
         decimal totalCarrinho = 0;
 
         private Balcao balcaoForm;
+        private Cozinha cozinhaForm;
 
         public Form1()
         {
@@ -48,7 +49,7 @@ namespace WinFormsApp7
             lblCarrinho.Items.Clear();
             foreach (var carrinho in carrinhos)
             {
-                lblCarrinho.Items.Add(carrinho); 
+                lblCarrinho.Items.Add(carrinho);
             }
         }
         private void lblProdutos_SelectedIndexChanged(object sender, EventArgs e)
@@ -258,7 +259,7 @@ namespace WinFormsApp7
                 checkBox1.Checked = false;
             }
         }
-        
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -321,6 +322,8 @@ namespace WinFormsApp7
             btnFinalizar.FlatAppearance.BorderSize = 1;
             btnBalcao.FlatStyle = FlatStyle.Flat;
             btnBalcao.FlatAppearance.BorderSize = 1;
+            btnCozinha.FlatStyle = FlatStyle.Flat;
+            btnCozinha.FlatAppearance.BorderSize = 1;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -337,6 +340,12 @@ namespace WinFormsApp7
         {
             balcaoForm = new Balcao();
             balcaoForm.ShowDialog();
+        }
+
+        private void btnCozinha_Click(object sender, EventArgs e)
+        {
+            cozinhaForm = new Cozinha();
+            cozinhaForm.ShowDialog();
         }
     }
 }

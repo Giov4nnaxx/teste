@@ -34,7 +34,8 @@
             listEntregues = new ListBox();
             label1 = new Label();
             label2 = new Label();
-            btnEntregar = new Button();
+            btnEntregarCozinha = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -66,7 +67,7 @@
             listBalcao.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBalcao.ForeColor = Color.FromArgb(17, 25, 12);
             listBalcao.FormattingEnabled = true;
-            listBalcao.Location = new Point(22, 83);
+            listBalcao.Location = new Point(22, 115);
             listBalcao.Name = "listBalcao";
             listBalcao.Size = new Size(527, 202);
             listBalcao.TabIndex = 21;
@@ -78,7 +79,7 @@
             listEntregues.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listEntregues.ForeColor = Color.FromArgb(17, 25, 12);
             listEntregues.FormattingEnabled = true;
-            listEntregues.Location = new Point(22, 383);
+            listEntregues.Location = new Point(22, 407);
             listEntregues.Name = "listEntregues";
             listEntregues.Size = new Size(527, 202);
             listEntregues.TabIndex = 22;
@@ -88,7 +89,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(22, 344);
+            label1.Location = new Point(22, 370);
             label1.Name = "label1";
             label1.Size = new Size(149, 21);
             label1.TabIndex = 23;
@@ -99,23 +100,33 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(230, 255, 0);
             label2.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(22, 47);
+            label2.Location = new Point(22, 76);
             label2.Name = "label2";
-            label2.Size = new Size(68, 21);
+            label2.Size = new Size(132, 21);
             label2.TabIndex = 24;
-            label2.Text = "Pedidos";
+            label2.Text = "Pedidos Prontos";
             // 
-            // btnEntregar
+            // btnEntregarCozinha
             // 
-            btnEntregar.BackColor = Color.FromArgb(230, 255, 0);
-            btnEntregar.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntregar.Location = new Point(612, 306);
-            btnEntregar.Name = "btnEntregar";
-            btnEntregar.Size = new Size(197, 50);
-            btnEntregar.TabIndex = 25;
-            btnEntregar.Text = "Entregar";
-            btnEntregar.UseVisualStyleBackColor = false;
-            btnEntregar.Click += btnEntregar_Click;
+            btnEntregarCozinha.BackColor = Color.FromArgb(230, 255, 0);
+            btnEntregarCozinha.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEntregarCozinha.Location = new Point(649, 267);
+            btnEntregarCozinha.Name = "btnEntregarCozinha";
+            btnEntregarCozinha.Size = new Size(197, 50);
+            btnEntregarCozinha.TabIndex = 25;
+            btnEntregarCozinha.Text = "Entregar";
+            btnEntregarCozinha.UseVisualStyleBackColor = false;
+            btnEntregarCozinha.Click += btnEntregar_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Agrandir", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(448, 21);
+            label3.Name = "label3";
+            label3.Size = new Size(101, 36);
+            label3.TabIndex = 26;
+            label3.Text = "Balcão";
             // 
             // Balcao
             // 
@@ -123,7 +134,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1066, 640);
-            Controls.Add(btnEntregar);
+            Controls.Add(label3);
+            Controls.Add(btnEntregarCozinha);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(listEntregues);
@@ -147,6 +159,7 @@
         private ListBox listEntregues;
         private Label label1;
         private Label label2;
-        private Button btnEntregar;
+        private Button btnEntregarCozinha;
+        private Label label3;
     }
 }

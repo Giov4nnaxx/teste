@@ -8,7 +8,7 @@ namespace WinFormsApp7
 {
     internal class Pedido
     {
-        public List<Produtos> Produtos { get; set; }
+        public List<Produtos> Produtos { get; set; } = new List<Produtos>();
         public string Cliente { get; set; }
         public string Metodo_pag { get; set; }
         public string Viagem { get; set; }
@@ -27,8 +27,26 @@ namespace WinFormsApp7
 
         public override string ToString()
         {
-            string produtosTexto = string.Join(", ", Produtos.Select(p => $"x{p.Quantidade} {p.Descricao}"));
-            return $"{Cliente} - {produtosTexto}";
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"Pedido: {Cliente}--");
+            if (this.status==Status.PREPARANDO)
+            {
+                foreach(var produto in Produtos)
+                {
+                    if (produto.isChapa)
+                    {
+                        sb.Append($" {produto.Quantidade}x - {produto.Descricao}");
+                    }
+                }
+            }
+            else
+            {
+                foreach(var produto in Produtos)
+                    sb.Append($" {produto.Quantidade}x - {produto.Descricao}");
+            }
+            return sb.ToString();
+            //string produtosTexto = string.Join(", ", Produtos.Select(p => $"x{p.Quantidade} {p.Descricao}"));
+            //return $"{Cliente} - {produtosTexto}";
         }
     }
 }

@@ -47,6 +47,7 @@
             label4 = new Label();
             label5 = new Label();
             btnBalcao = new Button();
+            btnCozinha = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuant).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -258,7 +259,7 @@
             // 
             btnBalcao.BackColor = Color.FromArgb(230, 255, 0);
             btnBalcao.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBalcao.Location = new Point(1209, 534);
+            btnBalcao.Location = new Point(1209, 515);
             btnBalcao.Name = "btnBalcao";
             btnBalcao.Size = new Size(86, 30);
             btnBalcao.TabIndex = 23;
@@ -266,12 +267,25 @@
             btnBalcao.UseVisualStyleBackColor = false;
             btnBalcao.Click += button1_Click_1;
             // 
+            // btnCozinha
+            // 
+            btnCozinha.BackColor = Color.FromArgb(230, 255, 0);
+            btnCozinha.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCozinha.Location = new Point(1209, 561);
+            btnCozinha.Name = "btnCozinha";
+            btnCozinha.Size = new Size(86, 28);
+            btnCozinha.TabIndex = 24;
+            btnCozinha.Text = "Cozinha";
+            btnCozinha.UseVisualStyleBackColor = false;
+            btnCozinha.Click += btnCozinha_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1347, 612);
+            Controls.Add(btnCozinha);
             Controls.Add(btnBalcao);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -323,5 +337,6 @@
         private Label label4;
         private Label label5;
         private Button btnBalcao;
+        private Button btnCozinha;
     }
 }
