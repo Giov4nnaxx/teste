@@ -82,24 +82,24 @@
             // lblProdutos
             // 
             lblProdutos.BackColor = Color.FromArgb(202, 196, 183);
-            lblProdutos.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProdutos.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProdutos.ForeColor = Color.FromArgb(17, 25, 12);
             lblProdutos.FormattingEnabled = true;
             lblProdutos.Location = new Point(465, 152);
             lblProdutos.Name = "lblProdutos";
-            lblProdutos.Size = new Size(277, 334);
+            lblProdutos.Size = new Size(277, 319);
             lblProdutos.TabIndex = 2;
             lblProdutos.SelectedIndexChanged += lblProdutos_SelectedIndexChanged;
             // 
             // lblCarrinho
             // 
             lblCarrinho.BackColor = Color.FromArgb(202, 196, 183);
-            lblCarrinho.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCarrinho.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCarrinho.ForeColor = Color.FromArgb(17, 25, 12);
             lblCarrinho.FormattingEnabled = true;
             lblCarrinho.Location = new Point(1015, 152);
             lblCarrinho.Name = "lblCarrinho";
-            lblCarrinho.Size = new Size(280, 334);
+            lblCarrinho.Size = new Size(280, 319);
             lblCarrinho.TabIndex = 3;
             lblCarrinho.SelectedIndexChanged += lblCarrinho_SelectedIndexChanged;
             // 

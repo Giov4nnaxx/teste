@@ -209,8 +209,6 @@ namespace WinFormsApp7
 
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (carrinhos.Count == 0)
@@ -255,6 +253,7 @@ namespace WinFormsApp7
                 ListarCarrinho();
                 TotalPagar();
                 txtNome.Clear();
+                comboBox1.SelectedIndex = -1;
                 comboBox1.Text = "";
                 checkBox1.Checked = false;
             }

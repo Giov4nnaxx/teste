@@ -72,10 +72,11 @@
             // listCozinha
             // 
             listCozinha.BackColor = Color.FromArgb(202, 196, 183);
+            listCozinha.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listCozinha.FormattingEnabled = true;
             listCozinha.Location = new Point(25, 160);
             listCozinha.Name = "listCozinha";
-            listCozinha.Size = new Size(595, 259);
+            listCozinha.Size = new Size(595, 256);
             listCozinha.TabIndex = 28;
             // 
             // btnEntregarCozinha

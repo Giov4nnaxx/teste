@@ -64,24 +64,24 @@
             // listBalcao
             // 
             listBalcao.BackColor = Color.FromArgb(202, 196, 183);
-            listBalcao.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listBalcao.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBalcao.ForeColor = Color.FromArgb(17, 25, 12);
             listBalcao.FormattingEnabled = true;
             listBalcao.Location = new Point(22, 115);
             listBalcao.Name = "listBalcao";
-            listBalcao.Size = new Size(527, 202);
+            listBalcao.Size = new Size(527, 193);
             listBalcao.TabIndex = 21;
             listBalcao.SelectedIndexChanged += listBalcao_SelectedIndexChanged;
             // 
             // listEntregues
             // 
             listEntregues.BackColor = Color.FromArgb(202, 196, 183);
-            listEntregues.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listEntregues.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listEntregues.ForeColor = Color.FromArgb(17, 25, 12);
             listEntregues.FormattingEnabled = true;
             listEntregues.Location = new Point(22, 407);
             listEntregues.Name = "listEntregues";
-            listEntregues.Size = new Size(527, 202);
+            listEntregues.Size = new Size(527, 193);
             listEntregues.TabIndex = 22;
             listEntregues.SelectedIndexChanged += listEntregues_SelectedIndexChanged;
             // 

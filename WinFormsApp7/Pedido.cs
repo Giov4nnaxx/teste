@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace WinFormsApp7
 {
@@ -28,25 +24,23 @@ namespace WinFormsApp7
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"Pedido: {Cliente}--");
-            if (this.status==Status.PREPARANDO)
+            sb.Append($"{Cliente} | ");
+            if (this.status == Status.PREPARANDO)
             {
-                foreach(var produto in Produtos)
+                foreach (var produto in Produtos)
                 {
-                    if (produto.isChapa)
+                    if (produto.IsChapa)
                     {
-                        sb.Append($" {produto.Quantidade}x - {produto.Descricao}");
+                        sb.Append($" {produto.Quantidade}x {produto.Descricao} |");
                     }
                 }
             }
             else
             {
-                foreach(var produto in Produtos)
-                    sb.Append($" {produto.Quantidade}x - {produto.Descricao}");
+                foreach (var produto in Produtos)
+                    sb.Append($" {produto.Quantidade}x {produto.Descricao}");
             }
             return sb.ToString();
-            //string produtosTexto = string.Join(", ", Produtos.Select(p => $"x{p.Quantidade} {p.Descricao}"));
-            //return $"{Cliente} - {produtosTexto}";
         }
     }
 }
