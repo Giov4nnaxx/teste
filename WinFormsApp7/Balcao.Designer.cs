@@ -36,6 +36,7 @@
             label2 = new Label();
             btnEntregarCozinha = new Button();
             label3 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -128,12 +129,23 @@
             label3.TabIndex = 26;
             label3.Text = "Balcão";
             // 
+            // button1
+            // 
+            button1.Font = new Font("Inter", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(692, 333);
+            button1.Name = "button1";
+            button1.Size = new Size(116, 34);
+            button1.TabIndex = 27;
+            button1.Text = "Chamar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Balcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1066, 640);
+            Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(btnEntregarCozinha);
             Controls.Add(label2);
@@ -161,5 +173,6 @@
         private Label label2;
         private Button btnEntregarCozinha;
         private Label label3;
+        private Button button1;
     }
 }

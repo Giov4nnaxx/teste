@@ -161,8 +161,6 @@ namespace WinFormsApp7
                     Pagamento();
                 }
             }
-
-
         }
 
         private void TotalPagar()
