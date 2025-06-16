@@ -3,6 +3,9 @@
     internal partial class Balcao : Form
     {
         List<Pedido> pedidos = new List<Pedido>();
+
+        private ChamadaNome chamadaNomeForm;
+        private Chamada chamadaForm;
         public Balcao()
         {
             InitializeComponent();
@@ -39,8 +42,6 @@
             btnEntregarCozinha.FlatStyle = FlatStyle.Flat;
             btnEntregarCozinha.FlatAppearance.BorderSize = 1;
 
-            //listBalcao.Items.Clear();
-
             foreach (var pedido in PedidosFinalizados.pedidosFinalizados)
             {
                 if (pedido.status == Status.PRONTO)
@@ -52,6 +53,9 @@
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {
+            chamadaNomeForm = new ChamadaNome();
+            chamadaNomeForm.ShowDialog();
+
             if (listBalcao.SelectedItem == null)
             {
                 MessageBox.Show("Selecione um Pedido!!");
@@ -78,6 +82,12 @@
         private void listEntregues_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            chamadaForm = new Chamada();
+            chamadaForm.ShowDialog();
         }
     }
 }

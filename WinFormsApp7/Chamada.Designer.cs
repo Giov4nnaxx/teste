@@ -31,7 +31,10 @@
             label1 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            lblChamada = new Label();
+            listAndamento = new ListBox();
+            listPronto = new ListBox();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -66,28 +69,63 @@
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
             // 
-            // lblChamada
+            // listAndamento
             // 
-            lblChamada.AutoSize = true;
-            lblChamada.Font = new Font("Agrandir", 25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblChamada.Location = new Point(330, 167);
-            lblChamada.Name = "lblChamada";
-            lblChamada.Size = new Size(110, 46);
-            lblChamada.TabIndex = 21;
-            lblChamada.Text = "label2";
+            listAndamento.BackColor = Color.FromArgb(202, 196, 183);
+            listAndamento.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listAndamento.FormattingEnabled = true;
+            listAndamento.Location = new Point(49, 161);
+            listAndamento.Name = "listAndamento";
+            listAndamento.Size = new Size(258, 277);
+            listAndamento.TabIndex = 21;
+            // 
+            // listPronto
+            // 
+            listPronto.BackColor = Color.FromArgb(202, 196, 183);
+            listPronto.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listPronto.FormattingEnabled = true;
+            listPronto.Location = new Point(471, 161);
+            listPronto.Name = "listPronto";
+            listPronto.Size = new Size(258, 277);
+            listPronto.TabIndex = 22;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(230, 255, 0);
+            label2.Font = new Font("Agrandir", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(49, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(165, 20);
+            label2.TabIndex = 23;
+            label2.Text = "Pedido em Andamento";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Agrandir", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(471, 122);
+            label3.Name = "label3";
+            label3.Size = new Size(127, 20);
+            label3.TabIndex = 24;
+            label3.Text = "Pedidos Prontos";
             // 
             // Chamada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
-            ClientSize = new Size(756, 449);
-            Controls.Add(lblChamada);
+            ClientSize = new Size(795, 475);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(listPronto);
+            Controls.Add(listAndamento);
             Controls.Add(pictureBox2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Chamada";
             Text = "Chamada";
+            Load += Chamada_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -99,6 +137,9 @@
         private Label label1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Label lblChamada;
+        private ListBox listAndamento;
+        private ListBox listPronto;
+        private Label label2;
+        private Label label3;
     }
 }

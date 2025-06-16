@@ -4,7 +4,7 @@ namespace WinFormsApp7
 {
     internal class Pedido
     {
-        public List<Produtos> Produtos { get; set; } = new List<Produtos>();
+        public List<Produtos> Produtos { get; set; }
         public string Cliente { get; set; }
         public string Metodo_pag { get; set; }
         public string Viagem { get; set; }

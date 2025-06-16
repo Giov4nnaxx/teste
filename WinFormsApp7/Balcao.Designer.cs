@@ -111,7 +111,7 @@
             // 
             btnEntregarCozinha.BackColor = Color.FromArgb(230, 255, 0);
             btnEntregarCozinha.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntregarCozinha.Location = new Point(649, 267);
+            btnEntregarCozinha.Location = new Point(653, 306);
             btnEntregarCozinha.Name = "btnEntregarCozinha";
             btnEntregarCozinha.Size = new Size(197, 50);
             btnEntregarCozinha.TabIndex = 25;
@@ -131,13 +131,14 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Inter", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(692, 333);
+            button1.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(704, 382);
             button1.Name = "button1";
-            button1.Size = new Size(116, 34);
+            button1.Size = new Size(98, 28);
             button1.TabIndex = 27;
-            button1.Text = "Chamar";
+            button1.Text = "Chamada";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Balcao
             // 
