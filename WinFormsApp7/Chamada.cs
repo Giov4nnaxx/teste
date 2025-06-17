@@ -14,7 +14,7 @@
                 if (pedido.status == Status.PRONTO || pedido.status == Status.PREPARANDO)
                     listAndamento.Items.Add(pedido.Cliente);
                 else if (pedido.status == Status.ENTREGUE)
-                    listPronto.Items.Add(pedido.Cliente);
+                    listPronto.Items.Insert(0, pedido.Cliente);
 
                 if (listPronto.Items.Count == 5)
                     listPronto.Items.RemoveAt(4);
