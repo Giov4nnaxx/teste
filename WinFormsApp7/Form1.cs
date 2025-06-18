@@ -38,7 +38,7 @@ namespace WinFormsApp7
         private void ListarProdutos()
         {
             lblProdutos.Items.Clear();
-            foreach (var produto in produtos)
+            foreach (Produtos produto in produtos)
             {
                 lblProdutos.Items.Add(produto);
             }
@@ -47,7 +47,7 @@ namespace WinFormsApp7
         private void ListarCarrinho()
         {
             lblCarrinho.Items.Clear();
-            foreach (var carrinho in carrinhos)
+            foreach (Produtos carrinho in carrinhos)
             {
                 lblCarrinho.Items.Add(carrinho);
             }
@@ -67,7 +67,7 @@ namespace WinFormsApp7
                 int quant = (int)numericQuant.Value;
                 Produtos produtoSelecionado = (Produtos)lblProdutos.SelectedItem;
 
-                var itemExistente = carrinhos.FirstOrDefault(p => p.Descricao == produtoSelecionado.Descricao);
+                Produtos itemExistente = carrinhos.FirstOrDefault(p => p.Descricao == produtoSelecionado.Descricao);
 
                 if (itemExistente != null)
                 {
@@ -130,16 +130,7 @@ namespace WinFormsApp7
         }
         private void Pagamento()
         {
-            if (comboBox1.SelectedItem == "Cartão")
-            {
-                MessageBox.Show("Pagamento em Cartão");
-
-            }
-            else if (comboBox1.SelectedItem == "Pix")
-            {
-                MessageBox.Show("Pagamento no Pix");
-            }
-            else if (comboBox1.SelectedItem == "Dinheiro")
+             if (comboBox1.SelectedItem == "Dinheiro")
             {
                 string input = Interaction.InputBox($"O total é R$ {totalCarrinho:F2}. Digite o valor:");
                 if (decimal.TryParse(input, out decimal dinheiro))
@@ -175,7 +166,7 @@ namespace WinFormsApp7
                 MessageBox.Show("Selecione um produto");
                 return;
             }
-            var produto = lblCarrinho.SelectedItem as Produtos;
+            Produtos produto = (Produtos)lblCarrinho.SelectedItem;
 
             int quantidadeRemover = (int)numericQuant.Value;
 
@@ -290,7 +281,6 @@ namespace WinFormsApp7
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string cliente = txtNome.Text;
-
         }
 
         private void listNomes_SelectedIndexChanged(object sender, EventArgs e)

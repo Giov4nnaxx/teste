@@ -19,9 +19,11 @@ namespace WinFormsApp7
 
         private void ChamadaNome_Load(object sender, EventArgs e)
         {
-            foreach(var produto in PedidosFinalizados.pedidosFinalizados)
-                if(produto.status == Status.ENTREGUE)
-                lblNome.Text = produto.Cliente;
+
+        }
+        public void chamada(string Cliente)
+        {
+            lblNome.Text = Cliente;
         }
     }
 }

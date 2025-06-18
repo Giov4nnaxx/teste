@@ -13,14 +13,15 @@
         public void AtualizarPedidos()
         {
             listBalcao.Items.Clear();
-            foreach (var pedido in PedidosFinalizados.pedidosFinalizados)
+            foreach (Pedido pedido in PedidosFinalizados.pedidosFinalizados)
             {
                 listBalcao.Items.Add(pedido);
             }
         }
 
-        private void listBalcao_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (listBalcao.SelectedItem is Pedido pedido)
             {
                 string detalhes = $"Cliente: {pedido.Cliente}\n" +
@@ -28,12 +29,10 @@
                                   $"Viagem: {pedido.Viagem}\n" +
                                   $"Status: {pedido.status}\n\nProdutos:\n";
 
-                foreach (var prod in pedido.Produtos)
+                foreach (Produtos prod in pedido.Produtos)
                 {
                     detalhes += $"x{prod.Quantidade} {prod.Descricao} - R$ {prod.Preco:F2}\n";
                 }
-
-
             }
         }
 
@@ -42,7 +41,7 @@
             btnEntregarCozinha.FlatStyle = FlatStyle.Flat;
             btnEntregarCozinha.FlatAppearance.BorderSize = 1;
 
-            foreach (var pedido in PedidosFinalizados.pedidosFinalizados)
+            foreach (Pedido pedido in PedidosFinalizados.pedidosFinalizados)
             {
                 if (pedido.status == Status.PRONTO)
                     listBalcao.Items.Add(pedido);
@@ -53,25 +52,26 @@
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {
-            chamadaNomeForm = new ChamadaNome();
-            chamadaNomeForm.ShowDialog();
+            if (listEntregues.Items.Count == 5)
+                listEntregues.Items.RemoveAt(4);
 
             if (listBalcao.SelectedItem == null)
             {
                 MessageBox.Show("Selecione um Pedido!!");
                 return;
             }
-
-            if (listEntregues.Items.Count == 5)
-                listEntregues.Items.RemoveAt(4);
-
-            var pedidoSelecionado = listBalcao.SelectedItem as Pedido;
+            
+            Pedido pedidoSelecionado = listBalcao.SelectedItem as Pedido;
             pedidoSelecionado.status = Status.ENTREGUE;
 
             int index = listBalcao.SelectedIndex;
             listBalcao.Items.RemoveAt(index);
 
             listEntregues.Items.Insert(0, pedidoSelecionado);
+
+            chamadaNomeForm = new ChamadaNome();
+            chamadaNomeForm.chamada(pedidoSelecionado.Cliente);
+            chamadaNomeForm.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

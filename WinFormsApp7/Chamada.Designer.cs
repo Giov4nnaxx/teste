@@ -43,7 +43,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Agrandir", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(405, 21);
+            label1.Location = new Point(387, 32);
             label1.Name = "label1";
             label1.Size = new Size(134, 36);
             label1.TabIndex = 0;
@@ -64,7 +64,7 @@
             pictureBox1.Image = Properties.Resources.Captura_de_tela_2025_05_15_081445_removebg_preview;
             pictureBox1.Location = new Point(-2, -8);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(632, 368);
+            pictureBox1.Size = new Size(699, 390);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
@@ -88,6 +88,7 @@
             listPronto.Name = "listPronto";
             listPronto.Size = new Size(258, 277);
             listPronto.TabIndex = 22;
+            listPronto.SelectedIndexChanged += listPronto_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -124,6 +125,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Chamada";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Chamada";
             Load += Chamada_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

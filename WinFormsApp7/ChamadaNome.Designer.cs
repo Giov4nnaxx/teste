@@ -61,7 +61,7 @@
             pictureBox1.Image = Properties.Resources.Captura_de_tela_2025_05_15_081445_removebg_preview;
             pictureBox1.Location = new Point(0, -3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(632, 368);
+            pictureBox1.Size = new Size(696, 401);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 22;
             pictureBox1.TabStop = false;
@@ -69,10 +69,10 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Font = new Font("Agrandir", 50F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(289, 170);
+            lblNome.Font = new Font("Agrandir", 50.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblNome.Location = new Point(308, 182);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(219, 90);
+            lblNome.Size = new Size(221, 90);
             lblNome.TabIndex = 23;
             lblNome.Text = "Nome";
             lblNome.UseWaitCursor = true;
@@ -87,6 +87,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "ChamadaNome";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ChamadaNome";
             Load += ChamadaNome_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

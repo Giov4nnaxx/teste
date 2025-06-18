@@ -12,7 +12,7 @@
             btnEntregarCozinha.FlatStyle = FlatStyle.Flat;
             btnEntregarCozinha.FlatAppearance.BorderSize = 1;
 
-            foreach (var pedido in PedidosFinalizados.pedidosFinalizados)
+            foreach (Pedido pedido in PedidosFinalizados.pedidosFinalizados)
             {
                 if (pedido.status == Status.PREPARANDO)
                     listCozinha.Items.Add(pedido);
