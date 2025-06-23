@@ -62,7 +62,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.bolt_logo__1_;
-            pictureBox2.Location = new Point(747, -6);
+            pictureBox2.Location = new Point(650, -6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(259, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -106,7 +106,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
-            ClientSize = new Size(1018, 578);
+            ClientSize = new Size(921, 501);
             Controls.Add(label2);
             Controls.Add(btnEntregarCozinha);
             Controls.Add(listCozinha);

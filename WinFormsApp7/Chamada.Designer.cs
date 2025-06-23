@@ -52,9 +52,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.bolt_logo__1_;
-            pictureBox2.Location = new Point(580, 3);
+            pictureBox2.Location = new Point(580, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(164, 93);
+            pictureBox2.Size = new Size(203, 126);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
@@ -121,8 +121,8 @@
             Controls.Add(label2);
             Controls.Add(listPronto);
             Controls.Add(listAndamento);
-            Controls.Add(pictureBox2);
             Controls.Add(label1);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "Chamada";
             StartPosition = FormStartPosition.CenterScreen;

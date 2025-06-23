@@ -2,6 +2,7 @@
 {
     public partial class Chamada : Form
     {
+ 
         public Chamada()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@
 
         private void listPronto_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

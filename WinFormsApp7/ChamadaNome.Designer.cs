@@ -70,7 +70,7 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Agrandir", 50.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(308, 182);
+            lblNome.Location = new Point(361, 170);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(221, 90);
             lblNome.TabIndex = 23;

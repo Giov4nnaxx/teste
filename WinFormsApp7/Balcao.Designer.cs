@@ -44,7 +44,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.bolt_logo__1_;
-            pictureBox2.Location = new Point(795, -7);
+            pictureBox2.Location = new Point(680, -7);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(259, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -80,7 +80,7 @@
             listEntregues.Font = new Font("Agrandir", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listEntregues.ForeColor = Color.FromArgb(17, 25, 12);
             listEntregues.FormattingEnabled = true;
-            listEntregues.Location = new Point(22, 407);
+            listEntregues.Location = new Point(22, 360);
             listEntregues.Name = "listEntregues";
             listEntregues.Size = new Size(527, 193);
             listEntregues.TabIndex = 22;
@@ -90,7 +90,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Agrandir", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(22, 370);
+            label1.Location = new Point(22, 325);
             label1.Name = "label1";
             label1.Size = new Size(149, 21);
             label1.TabIndex = 23;
@@ -111,7 +111,7 @@
             // 
             btnEntregarCozinha.BackColor = Color.FromArgb(230, 255, 0);
             btnEntregarCozinha.Font = new Font("Inter", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntregarCozinha.Location = new Point(653, 306);
+            btnEntregarCozinha.Location = new Point(640, 272);
             btnEntregarCozinha.Name = "btnEntregarCozinha";
             btnEntregarCozinha.Size = new Size(197, 50);
             btnEntregarCozinha.TabIndex = 25;
@@ -132,7 +132,7 @@
             // button1
             // 
             button1.Font = new Font("Inter", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(704, 382);
+            button1.Location = new Point(692, 341);
             button1.Name = "button1";
             button1.Size = new Size(98, 28);
             button1.TabIndex = 27;
@@ -145,7 +145,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
-            ClientSize = new Size(1066, 640);
+            ClientSize = new Size(951, 598);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(btnEntregarCozinha);
